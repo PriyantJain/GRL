@@ -1,0 +1,42 @@
+<head> 
+    Weak as of now, need to learn and implement more complicated stuff for better implementation <br>
+    Score : {{score}}
+    Class  : {{membership}}
+</head>
+
+<body>
+    <form method="post" action = "/"> 
+        {% if DT1_done == 1 %}
+            <button type = "submit" name = "DT_B1" style = "background-color : green"> {{DT1}} </button> <br>
+        {% else %}
+            <button type = "submit" name = "DT_B1"> {{DT1}} </button> <br>
+        {% endif %}
+        
+        {% if DT2_done == 1 %}
+            <button type = "submit" name = "DT_B2" style = "background-color : green"> {{DT2}} </button> <br>
+        {% else %}
+            <button type = "submit" name = "DT_B2"> {{DT2}} </button> <br>
+        {% endif %}
+
+        {% if DT3_done == 1 %}
+            <button type = "submit" name = "DT_B3" style = "background-color : green"> {{DT3}} </button> <br>
+        {% else %}
+            <button type = "submit" name = "DT_B3"> {{DT3}} </button> <br>
+        {% endif %}
+    </form>
+
+    <h1> TO DO list </h1>
+    {% for task in to_do %}
+        {{task}} <br>
+    {% endfor %}
+
+    <h1> recurring list </h1>
+    {% for task in recurring_tasks %}
+        {{task}} : {{recurring_tasks[task]}} <br>
+    {% endfor %}
+    
+</body>
+
+<style>
+    
+</style>

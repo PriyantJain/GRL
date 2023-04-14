@@ -1,0 +1,164 @@
+
+<head> 
+    Weak as of now, need to learn and implement more complicated stuff for better implementation <br>
+    <h1>Score : {{score}} / {{today_target}}<br>
+    Class  : {{membership}}
+    </h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div> 
+        <label for="ExtraTask">Extra Task </label>
+        <input type="text" id = "ExtraTask" name = "ExtraTask" placeholder = "Task Details">
+        <input type="text" id = "ExtraTaskPoints" name = "ExtraTaskPoints" placeholder = "Points Change">
+        <button type="button" name = "ET" id = "register_ET"> Submit </button> 
+        <br/><br/>
+    </div>
+
+    <div> 
+        <label for = "StandardTasks"> StandardTasks </label>
+        <select name = "StandardTasks" id = "StandardTasks">
+            <option value = "Select"> Select </option>
+            <option value = "Walk"> Walk distance (steps)</option>
+            <option value = "Learning"> Learning chunk (100 pt/unit)</option>
+        </select>
+        <input type = "text" id = "StandardTasksValue" name = "StandardTasksValue">
+        <button type="button" name = "StandardTasksSubmit" id = "StandardTasksSubmit"> Submit </button> 
+        <br/><br/>
+    </div>
+
+    <div> 
+        <label for = "DT_create"> Create Daily Task </label>
+        <select name = "DT_create" id = "DT_task_no">
+            <option value = "Select"> Select no. </option>
+            <option value = "1"> 1 </option>
+            <option value = "2"> 2 </option>
+            <option value = "3"> 3 </option>
+        </select>
+        <input type = "text" id = "DT_task_name" name = "DT_create_task">
+        <button type="button" name = "DT_create_submit" id = 'register_DT'> Submit </button> 
+        <br/><br/>
+    </div>
+
+    <div> 
+        {% if DT1_done == 1 %}
+            <button type = "button" name = "DT_B1" id = "DT_B1" style = "background-color : green"> {{DT1}} </button> <br>
+        {% else %}
+            <button type = "button" name = "DT_B1" id = "DT_B1"> {{DT1}} </button> <br>
+        {% endif %}
+        
+        {% if DT2_done == 1 %}
+            <button type = "button" name = "DT_B2" id = "DT_B2" style = "background-color : green"> {{DT2}} </button> <br>
+        {% else %}
+            <button type = "button" name = "DT_B2" id = "DT_B2"> {{DT2}} </button> <br>
+        {% endif %}
+
+        {% if DT3_done == 1 %}
+            <button type = "button" name = "DT_B3" id = "DT_B3" style = "background-color : green"> {{DT3}} </button> <br>
+        {% else %}
+            <button type = "button" name = "DT_B3" id = "DT_B3"> {{DT3}} </button> <br>
+        {% endif %}
+    </div>
+
+    <h1> TO DO list </h1>
+
+    <div> 
+        <label for = "TD_add"> Add new To Do </label>
+        <input type = "text" id = "TD_task_name" name = "TD_add" placeholder = "To Do Description">
+        <!-- <select name = "TD_filter" id = "TD_filter">
+            <option value = "Select"> Select filter </option>
+            <option value = "ML Learning"> ML Learning </option>
+            <option value = "Acad"> Acad </option>
+            <option value = "Extra Learning"> Extra Learning </option>
+            <option value = "Personal"> Personal </option>
+            <option value = "GRL"> GRL </option>
+            <option value = "Projects"> Projects </option>
+            <option value = "Others"> Others </option>
+        </select> -->
+        <button type = "button" name = "TD_add" id = "register_TD"> Submit </button> <br/><br/>
+    </div>
+
+    <div>
+        <table>
+            {% for task in to_do %}
+            <tr>
+                <td> <span name = 'TD_{{task[0]}}'>{{task[1]}} </span> </td>
+                <td> <span name = 'TD_filter_{{task[0]}}'>{{task[4]}} </span> </td>
+                <td> <button type = "button" name = "TD_completed" id = "TD_completed_btn" value = "{{task[0]}}"> &#x2713;</button></td>
+                <td>
+                    <button type = "button" name = "TD_del" id = 'TD_delete_btn' value="{{task[0]}}" > 
+                        <i class='fa fa-trash'></i> 
+                    </button>
+                </td>
+                <td> 
+                    <button type = "button" id = "TD_edit_btn" name = "TD_edit" value="{{task[0]}}">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h1> Completed TO DO </h1>
+        <table>
+            {% for task in to_do_done %}
+            <tr>
+                <td>{{task[1]}}</td>
+                <td><button type = "button" name = "TD_undo" id = "TD_undo_btn" value = "{{task[0]}}"> &#x2717;</button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    
+    <h1> Recurring tasks </h1>
+    <div> 
+        <label for = "RT_add"> Add new recurring task </label>
+        <input type = "text" id = "RT_task_name" name = "RT_add_task" placeholder = "Reccuring Task Description">
+        <input type = "text" id = "RT_task_points" name = "RT_add_points" placeholder = "Reccuring Task Points">
+        <button type = "button" name = "RT_add" id = "register_RT"> Submit </button> <br/><br/>
+    </div>
+
+    <div> 
+        <table>
+            {% for task in recurring_tasks %}
+                <tr>
+                    <td><span name = 'RT_task_{{task[0]}}'>{{task[1]}} </span></td>
+                    <td><span name = 'RT_points_{{task[0]}}'>{{task[3]}} </span></td>
+                    <td><button type = "button" name = "RT_completed" id = "RT_completed_btn" value = "{{task[0]}}"> &#x2713;</button></td>
+                    <td>
+                        <button type = "button" name = "RT_del" id = "RT_delete_btn" value="{{task[0]}}"> 
+                            <i class='fa fa-trash'></i> 
+                        </button>
+                    </td>
+                    <td> 
+                        <button type = "button" name = "RT_edit_{{task[0]}}" id = "RT_edit_btn" value = '{{task[0]}}'>
+                            <i class="fa fa-pencil"></i>
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <h1> completed recurring tasks </h1>
+        <table>
+        {% for task in recurring_tasks_done %}
+            <tr>
+                <td>{{task[1]}}</td>
+                <td>{{task[3]}}</td>
+                <td><button type = "button" name = "RT_undo" id = "RT_undo_btn" value = "{{task[0]}}"> &#x2717;</button></td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</body>
+
+<style>
+    table, td {
+        border: 1px solid black;
+    }
+</style>
+<!-- <script type="text/javascript" src="{{url_for('static', filename = 'js/extra_standard_tasks.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename = 'js/daily_tasks.js')}}"></script> -->
+<script type="module" src="{{url_for('static', filename = 'main.js')}}"></script>

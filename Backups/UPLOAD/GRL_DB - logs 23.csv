@@ -1,0 +1,1931 @@
+1930
+NEW DAY;20230103;DAILY CHARGE;
+UPDATE SCORE;-2440;-7440
+COMPLETED DT2;Correct initial pull status ;
+UPDATE SCORE;-7440;-7240
+RT_completed;0;Open GRL;
+UPDATE SCORE;-7240;-7230
+TD_completed;4;Tasks done after DT will yield a random bonus from 50 to 0.1% of next level requirement ;50;
+UPDATE SCORE;-7230;-7180
+ET;Del;-10;
+UPDATE SCORE;-7180;-7190
+ET;Undo Del;10;
+UPDATE SCORE;-7190;-7180
+COMPLETED DT1;Add Other Tasks option;
+UPDATE SCORE;-7180;-6880
+NEW DAY;20230105;DAILY CHARGE;
+UPDATE SCORE;-6880;-8880
+COMPLETED DT2;Cryptozombie 1 module;
+UPDATE SCORE;-8880;-8680
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-8680;-8670
+RT_completed;0;Open GRL;
+UPDATE SCORE;-8670;-8660
+RT_completed;5;Cream morning;
+UPDATE SCORE;-8660;-8650
+RT_completed;6;Cream evening;
+UPDATE SCORE;-8650;-8640
+UNDO DT2;Cryptozombie 1 module;
+UPDATE SCORE;-8640;-8840
+COMPLETED DT2;Cryptozombie 1 module;
+UPDATE SCORE;-8840;-8640
+NEW DAY;20230107;DAILY CHARGE;
+UPDATE SCORE;-8640;-10640
+RT_completed;5;Cream morning;
+UPDATE SCORE;-10640;-10630
+RT_completed;0;Open GRL;
+UPDATE SCORE;-10630;-10620
+RT_completed;2;Book reading 15 pages;
+UPDATE SCORE;-10620;-10605
+RT_completed;8;CryptoZombie;
+UPDATE SCORE;-10605;-10595
+ET;WALK;20230106;264;
+UPDATE SCORE;-10595;-10331
+ET;WALK;20230105;520;
+UPDATE SCORE;-10331;-9811
+COMPLETED DT3;General defeated;
+UPDATE SCORE;-9811;-9611
+COMPLETED DT2;Vinod cv;
+UPDATE SCORE;-9611;-9311
+ET;Sekiro;-300;
+UPDATE SCORE;-9311;-9611
+COMPLETED DT1;Score is suppose to be biggest thing;
+UPDATE SCORE;-9611;-9111
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-9111;-9101
+RT_completed;6;Cream evening;
+UPDATE SCORE;-9101;-9091
+TD_completed;1;Add lists to GRL;869;
+UPDATE SCORE;-9091;-8222
+NEW DAY;20230108;DAILY CHARGE;
+UPDATE SCORE;-8222;-9222
+RT_completed;0;Open GRL;
+UPDATE SCORE;-9222;-9212
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-9212;-9202
+ET;WALK;20230107;333;
+UPDATE SCORE;-9202;-8869
+RT_completed;5;Cream morning;
+UPDATE SCORE;-8869;-8859
+NEW DAY;20230109;DAILY CHARGE;
+UPDATE SCORE;-8859;-9859
+RT_completed;5;Cream morning;
+UPDATE SCORE;-9859;-9849
+RT_completed;0;Open GRL;
+UPDATE SCORE;-9849;-9839
+COMPLETED DT3;Chat Gpt;
+UPDATE SCORE;-9839;-9639
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-9639;-9629
+ET;WALK;20230108;695;
+UPDATE SCORE;-9629;-8934
+COMPLETED DT2;Cycle;
+UPDATE SCORE;-8934;-8634
+COMPLETED DT1;Add task add / delete;
+UPDATE SCORE;-8634;-8134
+TD_ADD;DEL;
+TD_DEL;10;DEL;
+RT_completed;8;CryptoZombie;
+UPDATE SCORE;-8134;-8124
+RT_completed;6;Cream evening;
+UPDATE SCORE;-8124;-8114
+NEW DAY;20230110;DAILY CHARGE;
+UPDATE SCORE;-8114;-9114
+RT_DEL;3;Medicine morning;
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-9114;-9104
+RT_completed;5;Cream morning;
+UPDATE SCORE;-9104;-9094
+RT_completed;0;Open GRL;
+UPDATE SCORE;-9094;-9084
+RT_ADD;del;0;
+RT_completed;9;del;
+UPDATE SCORE;-9084;-9084
+RT_UNDO;9;del;
+UPDATE SCORE;-9084;-9084
+RT_DEL;9;del;
+COMPLETED DT3;Add rt;
+UPDATE SCORE;-9084;-8884
+TD_ADD;Buy Muprocin;
+TD_ADD;Buy fuse 5A;
+COMPLETED DT1;Hair cut;
+UPDATE SCORE;-8884;-8584
+RT_completed;6;Cream evening;
+UPDATE SCORE;-8584;-8574
+RT_completed;1;Varsity;
+UPDATE SCORE;-8574;-8564
+TD_completed;11;Buy fuse 5A;50;
+UPDATE SCORE;-8564;-8514
+COMPLETED DT2;Learn react;
+UPDATE SCORE;-8514;-8014
+TD_completed;10;Buy Muprocin;51;
+UPDATE SCORE;-8014;-7963
+ET;Walk;20230109;221;
+UPDATE SCORE;-7963;-7742
+NEW DAY;20230111;DAILY CHARGE;
+UPDATE SCORE;-7742;-8742
+ET;WALK;20230110;960;
+UPDATE SCORE;-8742;-7782
+RT_completed;0;Open GRL;
+UPDATE SCORE;-7782;-7772
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-7772;-7762
+RT_completed;5;Cream morning;
+UPDATE SCORE;-7762;-7752
+TD_DEL;7;Hair cut;
+RT_completed;6;Cream evening;
+UPDATE SCORE;-7752;-7742
+COMPLETED DT1;Scrapper;
+UPDATE SCORE;-7742;-7542
+NEW DAY;20230116;DAILY CHARGE;
+UPDATE SCORE;-7542;-12542
+NEW DAY;20230117;DAILY CHARGE;
+UPDATE SCORE;-12542;-13542
+NEW DAY;20230118;DAILY CHARGE;
+UPDATE SCORE;-13542;-14542
+RT_completed;0;Open GRL;
+UPDATE SCORE;-14542;-14532
+COMPLETED DT2;Data exp;
+UPDATE SCORE;-14532;-14332
+COMPLETED DT3;Reset Dt;
+UPDATE SCORE;-14332;-14032
+COMPLETED DT1;23:00;
+UPDATE SCORE;-14032;-13532
+RT_completed;1;Varsity;
+UPDATE SCORE;-13532;-13522
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-13522;-13512
+RT_completed;5;Cream morning;
+UPDATE SCORE;-13512;-13502
+RT_completed;4;Medicine night;
+UPDATE SCORE;-13502;-13492
+RT_completed;7;Cream night;
+UPDATE SCORE;-13492;-13482
+ET;Walk;20230117;519;
+UPDATE SCORE;-13482;-12963
+ET;Walk;20230116;273;
+UPDATE SCORE;-12963;-12690
+NEW DAY;20230119;DAILY CHARGE;
+UPDATE SCORE;-12690;-13690
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-13690;-13680
+RT_completed;5;Cream morning;
+UPDATE SCORE;-13680;-13670
+ET;WALK;20230118;553;
+UPDATE SCORE;-13670;-13117
+RT_completed;0;Open GRL;
+UPDATE SCORE;-13117;-13107
+RT_ADD;23:00;100;
+NEW DAY;20230120;DAILY CHARGE;
+UPDATE SCORE;-13107;-14107
+NEW DAY;20230121;DAILY CHARGE;
+UPDATE SCORE;-14107;-15107
+NEW DAY;20230122;DAILY CHARGE;
+UPDATE SCORE;-15107;-16107
+COMPLETED DT1;Stat handouts x5;
+UPDATE SCORE;-16107;-15907
+COMPLETED DT2;Data exp;
+UPDATE SCORE;-15907;-15607
+COMPLETED DT3;Reset Dt;
+UPDATE SCORE;-15607;-15107
+RT_completed;0;Open GRL;
+UPDATE SCORE;-15107;-15087
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-15087;-14987
+RT_completed;4;Medicine night;
+UPDATE SCORE;-14987;-14887
+RT_completed;5;Cream morning;
+UPDATE SCORE;-14887;-14787
+RT_completed;6;Cream evening;
+UPDATE SCORE;-14787;-14687
+ET;WALK;20230119;666;
+UPDATE SCORE;-14687;-14021
+ET;WALK;20230120;1036;
+UPDATE SCORE;-14021;-12985
+ET;WALK;20230121;12353;
+UPDATE SCORE;-12985;-632
+ET;UNDO_WALK;20230121;-12353;
+UPDATE SCORE;-632;-12985
+ET;WALK;20230121;1235;
+UPDATE SCORE;-12985;-11750
+NEW DAY;20230123;DAILY CHARGE;
+UPDATE SCORE;-11750;-12750
+NEW DAY;20230124;DAILY CHARGE;
+UPDATE SCORE;-12750;-13750
+RT_completed;5;Cream morning;
+UPDATE SCORE;-13750;-13650
+COMPLETED DT1;Stat handouts x5;
+UPDATE SCORE;-13650;-13450
+RT_completed;0;Open GRL;
+UPDATE SCORE;-13450;-13430
+ET;WALK;20230122;518;
+UPDATE SCORE;-13430;-12912
+ET;WALK;20230123;221;
+UPDATE SCORE;-12912;-12691
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-12691;-12591
+TD_ADD;Extension;
+TD_ADD;Add points feature TD;
+COMPLETED DT3;Reset Dt Create;
+UPDATE SCORE;-12591;-12291
+RT_completed;6;Cream evening;
+UPDATE SCORE;-12291;-12191
+RT_completed;4;Medicine night;
+UPDATE SCORE;-12191;-12091
+TD_ADD;Increase usage;
+RT_ADD;FRM 15 pg;300;
+TD_ADD;Learning chunks tab;
+TD_ADD;Walk Tab;
+TD_ADD;Game / Watch tab;
+COMPLETED DT2;2300;
+UPDATE SCORE;-12091;-11591
+TD_ADD;Complete DT in past;
+RT_completed;9;23:00;
+UPDATE SCORE;-11591;-11491
+TD_DEL;17;Complete DT in past;
+TD_ADD;Reset day with permission;
+RT_completed;7;Cream night;
+UPDATE SCORE;-11491;-11391
+NEW DAY;20230125;DAILY CHARGE;
+UPDATE SCORE;-11391;-12391
+TD_ADD;Utc and ist stuff afterwards;
+TD_ADD;Doctor consult;
+RT_completed;5;Cream morning;
+UPDATE SCORE;-12391;-12291
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-12291;-12191
+COMPLETED DT1;Stat handouts x5;
+UPDATE SCORE;-12191;-11991
+ET;Walk;20230124;310;
+UPDATE SCORE;-11991;-11681
+RT_completed;4;Medicine night;
+UPDATE SCORE;-11681;-11581
+RT_completed;0;Open GRL;
+UPDATE SCORE;-11581;-11561
+RT_completed;10;FRM 15 pg;
+UPDATE SCORE;-11561;-11261
+COMPLETED DT3;Push Dt Create;
+UPDATE SCORE;-11261;-10961
+TD_ADD;Pin GRL on homepage;
+TD_ADD;Completed to do visibility limited;
+UNDO DT1;Stat handouts x5;
+UPDATE SCORE;-10961;-11261
+COMPLETED DT1;Stat handouts x5;
+UPDATE SCORE;-11261;-10961
+COMPLETED DT2;2300;
+UPDATE SCORE;-10961;-10461
+TD_completed;20;Pin GRL on homepage;334;
+UPDATE SCORE;-10461;-10127
+TD_completed;2;Add convienience buttons in GRL;378;
+UPDATE SCORE;-10127;-9749
+RT_DEL;8;CryptoZombie;
+RT_completed;8;23:00;
+UPDATE SCORE;-9749;-9649
+RT_completed;7;Cream night;
+UPDATE SCORE;-9649;-9549
+"TD_ADD;Add something in GRL for removing responsibility, lazing, curiosity;"
+TD_ADD;Add multiple tasks together or voice integration;
+NEW DAY;20230126;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-9549;-10549
+COMPLETED DT1;Add Daily Task;
+UPDATE SCORE;-10549;-10349
+UNDO DT1;Add Daily Task;
+UPDATE SCORE;-10349;-10549
+NEW DAY;20230128;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-10549;-12549
+ET;Fever x3;1500;
+UPDATE SCORE;-12549;-11049
+TD_DEL;24;Add Daily Task;
+TD_DEL;24;Add Daily Task;
+TD_DEL;24;Add Daily Task;
+"TD_ADD;""Add daily task"" gets shifted to to do BUG;"
+RT_completed;0;Open GRL;
+UPDATE SCORE;-11049;-11029
+ET;Walk;20230126;725;
+UPDATE SCORE;-11029;-10304
+ET;Walk;20230127;323;
+UPDATE SCORE;-10304;-9981
+NEW DAY;20230130;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-9981;-11981
+NEW DAY;20230131;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-11981;-12981
+TD_DEL;30;Add Daily Task;
+TD_DEL;27;Add Daily Task;
+TD_DEL;28;Add Daily Task;
+TD_DEL;26;Add Daily Task;
+TD_DEL;26;Add Daily Task;
+TD_DEL;25;Add Daily Task;
+ET;Fever x3;1500;
+UPDATE SCORE;-12981;-11481
+ET;Fever x3;1500;
+UPDATE SCORE;-11481;-9981
+ET;Walk;20230130;208;
+UPDATE SCORE;-9981;-9773
+RT_completed;0;Open GRL;
+UPDATE SCORE;-9773;-9753
+RT_completed;8;23:00;
+UPDATE SCORE;-9753;-9653
+NEW DAY;20230204;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-9653;-13653
+ET;Fever x5;2500;
+UPDATE SCORE;-13653;-11153
+RT_completed;0;Open GRL;
+UPDATE SCORE;-11153;-11133
+TD_ADD;Refill paper soap;
+TD_ADD;Trimmer charge;
+TD_ADD;We need some semi formal attire;
+TD_ADD;We need some semi formal attire;
+NEW DAY;20230205;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-11133;-12133
+TD_DEL;28;We need some semi formal attire;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-12133;-12113
+COMPLETED DT1;Add Daily Task;
+UPDATE SCORE;-12113;-11913
+ET;Walk;20230205;2115;
+UPDATE SCORE;-11913;-9798
+ET;Walk;20230204;219;
+UPDATE SCORE;-9798;-9579
+RT_completed;1;Varsity;
+UPDATE SCORE;-9579;-9529
+COMPLETED DT3;Add Daily Task;
+UPDATE SCORE;-9529;-9229
+NEW DAY;20230209;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-9229;-13229
+ET;Wed x5;2500;
+UPDATE SCORE;-13229;-10729
+ET;Wed x1;500;
+UPDATE SCORE;-10729;-10229
+TD_DEL;28;Add Daily Task;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-10229;-10209
+NEW DAY;20230210;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-10209;-11209
+ET;Walk;20230207;1200;
+UPDATE SCORE;-11209;-10009
+ET;Walk;20230208;1216;
+UPDATE SCORE;-10009;-8793
+ET;Walk;20230209;1207;
+UPDATE SCORE;-8793;-7586
+RT_completed;0;Open GRL;
+UPDATE SCORE;-7586;-7566
+ET;Walk;20230210;931;
+UPDATE SCORE;-7566;-6635
+TD_DEL;28;Add Daily Task;
+TD_DEL;29;Add Daily Task;
+TD_DEL;28;Add Daily Task;
+NEW DAY;20230211;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-6635;-7635
+NEW DAY;20230212;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-7635;-8635
+TD_DEL;33;Add Daily Task;
+TD_DEL;32;Add Daily Task;
+TD_DEL;30;Add Daily Task;
+TD_DEL;30;Add Daily Task;
+TD_DEL;29;Add Daily Task;
+TD_DEL;28;Add Daily Task;
+TD_DEL;19;Doctor consult;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-8635;-8615
+TD_ADD;Moulic pdf x3;
+TD_ADD;Better travelling clothes;
+COMPLETED DT1;moulic pdf x1;
+UPDATE SCORE;-8615;-8415
+COMPLETED DT2;dsai x2;
+UPDATE SCORE;-8415;-8115
+ET;Walk;20230211;72;
+UPDATE SCORE;-8115;-8043
+ET;Walk;20230212;673;
+UPDATE SCORE;-8043;-7370
+RT_completed;7;Cream night;
+UPDATE SCORE;-7370;-7270
+NEW DAY;20230213;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Add Daily Task;
+UPDATE SCORE;-7270;-8270
+TD_completed;25;Trimmer charge;50;
+UPDATE SCORE;-8270;-8220
+TD_ADD;task category so that easily handled;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-8220;-8200
+RT_completed;5;Cream morning;
+UPDATE SCORE;-8200;-8100
+COMPLETED DT1;Moulic x2;
+UPDATE SCORE;-8100;-7900
+COMPLETED DT3;Add daily bug;
+UPDATE SCORE;-7900;-7600
+NEW DAY;20230214;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Dsai x1;
+UPDATE SCORE;-7600;-8600
+TD_completed;27;Moulic pdf x3;50;
+UPDATE SCORE;-8600;-8550
+TD_DEL;30;Dsai x1;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-8550;-8530
+ET;WALK;20230213;491;
+UPDATE SCORE;-8530;-8039
+RT_completed;5;Cream morning;
+UPDATE SCORE;-8039;-7939
+COMPLETED DT1;Moulic complete;
+UPDATE SCORE;-7939;-7739
+COMPLETED DT3;Moulic complete;
+UPDATE SCORE;-7739;-7439
+COMPLETED DT2;Moulic complete;
+UPDATE SCORE;-7439;-6939
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-6939;-6839
+RT_completed;7;Cream night;
+UPDATE SCORE;-6839;-6739
+RT_completed;4;Medicine night;
+UPDATE SCORE;-6739;-6639
+RT_completed;8;23:00;
+UPDATE SCORE;-6639;-6539
+"TD_completed;23;""Add daily task"" gets shifted to to do BUG;542;"
+UPDATE SCORE;-6539;-5997
+NEW DAY;20230215;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-5997;-6997
+RT_completed;0;Open GRL;
+UPDATE SCORE;-6997;-6977
+ET;Walk;20230214;248;
+UPDATE SCORE;-6977;-6729
+COMPLETED DT1;Add Daily Task;
+UPDATE SCORE;-6729;-6529
+COMPLETED DT2;Add Daily Task;
+UPDATE SCORE;-6529;-6229
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-6229;-6129
+RT_completed;4;Medicine night;
+UPDATE SCORE;-6129;-6029
+RT_completed;5;Cream morning;
+UPDATE SCORE;-6029;-5929
+RT_completed;7;Cream night;
+UPDATE SCORE;-5929;-5829
+COMPLETED DT3;Add Daily Task;
+UPDATE SCORE;-5829;-5329
+UNDO DT3;Add Daily Task;
+UPDATE SCORE;-5329;-5829
+NEW DAY;20230217;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-5829;-7829
+ET;Walk;20230216;205;
+UPDATE SCORE;-7829;-7624
+COMPLETED DT1;Add Daily Task;
+UPDATE SCORE;-7624;-7424
+COMPLETED DT3;Add Daily Task;
+UPDATE SCORE;-7424;-7124
+RT_completed;0;Open GRL;
+UPDATE SCORE;-7124;-7104
+RT_completed;3;Medicine morning;
+UPDATE SCORE;-7104;-7004
+RT_completed;5;Cream morning;
+UPDATE SCORE;-7004;-6904
+RT_completed;6;Cream evening;
+UPDATE SCORE;-6904;-6804
+RT_UNDO;6;Cream evening;
+UPDATE SCORE;-6804;-6904
+RT_completed;4;Medicine night;
+UPDATE SCORE;-6904;-6804
+UNDO DT1;Add Daily Task;
+UPDATE SCORE;-6804;-7104
+COMPLETED DT1;Add Daily Task;
+UPDATE SCORE;-7104;-6804
+COMPLETED DT2;Add Daily Task;
+UPDATE SCORE;-6804;-6304
+RT_completed;7;Cream night;
+UPDATE SCORE;-6304;-6204
+RT_completed;2;Book reading 15 pages;
+UPDATE SCORE;-6204;-6054
+NEW DAY;20230218;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-6054;-7054
+COMPLETED DT2;ai dependable;
+UPDATE SCORE;-7054;-6854
+COMPLETED DT1;cloth back from laundry;
+UPDATE SCORE;-6854;-6554
+UNDO DT1;cloth back from laundry;
+UPDATE SCORE;-6554;-6854
+COMPLETED DT3;create add task to dt feature;
+UPDATE SCORE;-6854;-6554
+UNDO DT3;create add task to dt feature;
+UPDATE SCORE;-6554;-6854
+COMPLETED DT3;create add task to dt feature;
+UPDATE SCORE;-6854;-6554
+UNDO DT3;create add task to dt feature;
+UPDATE SCORE;-6554;-6854
+UNDO DT2;ai dependable;
+UPDATE SCORE;-6854;-7054
+RT_completed;0;Open GRL;
+UPDATE SCORE;-7054;-7034
+RT_completed;5;Cream morning;
+UPDATE SCORE;-7034;-6934
+RT_completed;7;Cream night;
+UPDATE SCORE;-6934;-6834
+NEW DAY;20230220;DAILY CHARGE;
+RESET_DT;
+TD_ADD;cloth back from laundry;
+TD_ADD;ai dependable;
+TD_ADD;create add task to dt feature;
+UPDATE SCORE;-6834;-8834
+ET;YesterdayDTs;1000;
+UPDATE SCORE;-8834;-7834
+NEW DAY;20230221;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-7834;-8834
+COMPLETED DT2;Add Daily Task;
+UPDATE SCORE;-8834;-8634
+TD_DEL;31;ai dependable;
+TD_DEL;30;cloth back from laundry;
+ET;Walk;20230220;575;
+UPDATE SCORE;-8634;-8059
+ET;Walk;20230219;750;
+UPDATE SCORE;-8059;-7309
+ET;Walk;20230219;532;
+UPDATE SCORE;-7309;-6777
+RT_completed;0;Open GRL;
+UPDATE SCORE;-6777;-6757
+COMPLETED DT3;bottle x3 ;
+UPDATE SCORE;-6757;-6457
+COMPLETED DT1;self notes of vnc;
+UPDATE SCORE;-6457;-5957
+NEW DAY;20230222;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-5957;-6957
+RT_completed;0;Open GRL;
+UPDATE SCORE;-6957;-6937
+RT_completed;6;Cream evening;
+UPDATE SCORE;-6937;-6837
+COMPLETED DT3;Add Daily Task;
+UPDATE SCORE;-6837;-6637
+COMPLETED DT2;Add Daily Task;
+UPDATE SCORE;-6637;-6337
+COMPLETED DT1;Add Daily Task;
+UPDATE SCORE;-6337;-5837
+ET;Walk;20230221;384;
+UPDATE SCORE;-5837;-5453
+TD_ADD;Wash clothes + add to do categ + vnc;
+NEW DAY;20230223;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-5453;-6453
+COMPLETED DT3;fnv;
+UPDATE SCORE;-6453;-6253
+TD_DEL;31;Wash clothes + add to do categ + vnc;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-6253;-6233
+RT_completed;6;Cream evening;
+UPDATE SCORE;-6233;-6133
+COMPLETED DT2;clothes;
+UPDATE SCORE;-6133;-5833
+COMPLETED DT1;Design td category;
+UPDATE SCORE;-5833;-5333
+ET;Walk;20230223;522;
+UPDATE SCORE;-5333;-4811
+RT_ADD;Breakfast;500;
+RT_DEL;31;Breakfast;
+RT_ADD;Breakfast;500;
+RT_DEL;31;Breakfast;
+TD_ADD;Recurr bug;
+RT_ADD;Breakfast;;
+RT_DEL;10;Breakfast;
+RT_ADD;Breakfast;500;
+TD_completed;31;Recurr bug;310;
+UPDATE SCORE;-4811;-4501
+RT_completed;7;Cream night;
+UPDATE SCORE;-4501;-4401
+RT_completed;8;23:00;
+UPDATE SCORE;-4401;-4301
+TD_ADD;Wash bedsheet;
+NEW DAY;20230224;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-4301;-5301
+RT_completed;0;Open GRL;
+UPDATE SCORE;-5301;-5281
+RT_completed;10;Breakfast;
+UPDATE SCORE;-5281;-4781
+COMPLETED DT3;change bedsheet;
+UPDATE SCORE;-4781;-4581
+WALK;20230223;499;
+UPDATE SCORE;-4581;-4082
+COMPLETED DT1;add walk tab;
+UPDATE SCORE;-4082;-3782
+COMPLETED DT2;mailbox needs to be sorted;
+UPDATE SCORE;-3782;-3282
+TD_ADD;Create and assign labels in gmail;
+TD_completed;32;Wash bedsheet;312;
+UPDATE SCORE;-3282;-2970
+RT_completed;6;Cream evening;
+UPDATE SCORE;-2970;-2870
+ET;Learn;100;
+UPDATE SCORE;-2870;-2770
+RT_completed;4;Medicine night;
+UPDATE SCORE;-2770;-2670
+Learning;100;
+UPDATE SCORE;-2670;-2570
+RT_completed;7;Cream night;
+UPDATE SCORE;-2570;-2470
+NEW DAY;20230225;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-2470;-3470
+WALK;20230224;251;
+UPDATE SCORE;-3470;-3219
+RT_completed;0;Open GRL;
+UPDATE SCORE;-3219;-3199
+TD_ADD;Sort up saved items;
+RT_completed;10;Breakfast;
+UPDATE SCORE;-3199;-2699
+TD_ADD;vinod's pc reset;
+COMPLETED DT2;Find ML competetion (look atleast 100);
+UPDATE SCORE;-2699;-2499
+TD_ADD;Dummy;
+TD_DEL;36;Dummy;
+RT_DEL;3;Medicine morning;
+RT_DEL;4;Cream morning;
+COMPLETED DT3;Confirmation pop up;
+UPDATE SCORE;-2499;-2199
+TD_ADD;Rishabh tasks;
+COMPLETED DT1;Mail complete clean;
+UPDATE SCORE;-2199;-1699
+TD_completed;35;vinod's pc reset;202;
+UPDATE SCORE;-1699;-1497
+TD_completed;36;Rishabh tasks;834;
+UPDATE SCORE;-1497;-663
+TD_DEL;33;Create and assign labels in gmail;
+TD_ADD;Automate labelling mail;
+TD_DEL;36;Automate labelling mail;
+TD_ADD;Automate labelling mail + add dt feature with dropdown + create notebook and basics for competition;
+NEW DAY;20230226;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;-663;-1663
+TD_DEL;36;Automate labelling mail + add dt feature with dropdown + create notebook and basics for competition;
+TD_ADD;Vinod laptop 2;
+RT_completed;0;Open GRL;
+UPDATE SCORE;-1663;-1643
+WALK;20230225;674;
+UPDATE SCORE;-1643;-969
+COMPLETED DT1;automate mail labelling;
+UPDATE SCORE;-969;-769
+DT_Create;1;automate mail labellin
+DT_Create;1;automate mail labelling
+COMPLETED DT2;add dt feature;
+UPDATE SCORE;-769;-469
+COMPLETED DT3;create notebook and directory for competition;
+UPDATE SCORE;-469;31
+TD_completed;36;Vinod laptop 2;104;
+UPDATE SCORE;31;135
+RT_completed;5;Cream night;
+UPDATE SCORE;135;235
+TD_ADD;Study of money influx;
+NEW DAY;20230227;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;235;-765
+TD_ADD;Vnc project;
+DT_Create;1;Comp data read and 4 charts
+TD_ADD;2nd years session GC;
+DT_Create;2;Limit completed to do visibility
+DT_Create;3;Pc clean and back up 1 hr
+WALK;20230226;682;
+UPDATE SCORE;-765;-83
+RT_completed;0;Open GRL;
+UPDATE SCORE;-83;-63
+RT_completed;8;Breakfast;
+UPDATE SCORE;-63;437
+RT_ADD;Call ;200;
+TD_ADD;Unstop quiz 24th march;
+TD_ADD;Clothes laundry;
+TD_ADD;Cycle puncture;
+TD_ADD;Office install;
+ET;RandomTask;177;
+UPDATE SCORE;437;614
+COMPLETED DT1;Comp data read and 4 charts;
+UPDATE SCORE;614;814
+COMPLETED DT2;Limit completed to do visibility;
+UPDATE SCORE;814;1114
+COMPLETED DT3;Pc clean and back up 1 hr;
+UPDATE SCORE;1114;1614
+TD_completed;43;Office install;460;
+UPDATE SCORE;1614;2074
+TD_DEL;30;create add task to dt feature;
+TD_ADD;Add DT feature;
+TD_completed;43;Add DT feature;77;
+UPDATE SCORE;2074;2151
+RT_completed;4;Cream evening;
+UPDATE SCORE;2151;2251
+TD_completed;39;Unstop quiz 24th march;89;
+UPDATE SCORE;2251;2340
+TD_UNDO;39;Unstop quiz 24th march;
+UPDATE SCORE;2340;2251
+TD_completed;38;2nd years session GC;571;
+UPDATE SCORE;2251;2822
+NEW DAY;20230228;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;2822;1822
+DT_Create;1;Comp eda
+DT_Create;2;Comp eda
+DT_Create;3;Extension complete
+RT_completed;0;Open GRL;
+UPDATE SCORE;1822;1842
+RT_completed;8;Breakfast;
+UPDATE SCORE;1842;2342
+WALK;20230227;366;
+UPDATE SCORE;2342;2708
+TD_ADD;Fold clothes;
+COMPLETED DT3;Extension complete;
+UPDATE SCORE;2708;2908
+COMPLETED DT1;Comp eda;
+UPDATE SCORE;2908;3208
+NEW DAY;20230301;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Comp eda;
+UPDATE SCORE;3208;2208
+DT_Create;1;Comp eda
+DT_Create;2;Extension pack
+DT_Create;3;Draw tool
+TD_DEL;45;Comp eda;
+TD_DEL;41;Cycle puncture;
+TD_completed;43;Fold clothes;50;
+UPDATE SCORE;2208;2258
+WALK;20230228;251;
+UPDATE SCORE;2258;2509
+RT_completed;0;Open GRL;
+UPDATE SCORE;2509;2529
+COMPLETED DT1;Comp eda;
+UPDATE SCORE;2529;2729
+COMPLETED DT2;Extension pack;
+UPDATE SCORE;2729;3029
+COMPLETED DT3;Draw tool;
+UPDATE SCORE;3029;3529
+NEW DAY;20230302;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;3529;2529
+RT_completed;0;Open GRL;
+UPDATE SCORE;2529;2549
+WALK;20230301;490;
+UPDATE SCORE;2549;3039
+RT_completed;8;Breakfast;
+UPDATE SCORE;3039;3539
+DT_Create;1;Shirt button
+DT_Create;2;React extension (1/2)
+DT_Create;3;Godaddy baseline improve
+ET;RandomTask;150;
+UPDATE SCORE;3539;3689
+TD_DEL;5;Wardrobe segmenter improve 1 day;
+COMPLETED DT3;Godaddy baseline improve;
+UPDATE SCORE;3689;3889
+COMPLETED DT1;Shirt button;
+UPDATE SCORE;3889;4189
+NEW DAY;20230303;DAILY CHARGE;
+RESET_DT;
+TD_ADD;React extension (1/2);
+UPDATE SCORE;4189;3189
+RT_completed;0;Open GRL;
+UPDATE SCORE;3189;3209
+DT_Create;1;Treasure hunt x 1hr
+DT_Create;2;Cloth laundry
+DT_Create;3;React extension (1/2)
+TD_DEL;43;React extension (1/2);
+RT_completed;8;Breakfast;
+UPDATE SCORE;3209;3709
+WALK;20230302;549;
+UPDATE SCORE;3709;4258
+COMPLETED DT1;Treasure hunt x 1hr;
+UPDATE SCORE;4258;4458
+COMPLETED DT2;Cloth laundry;
+UPDATE SCORE;4458;4758
+TD_DEL;39;Clothes laundry;
+COMPLETED DT3;React extension (1/2);
+UPDATE SCORE;4758;5258
+NEW DAY;20230304;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;5258;4258
+RT_completed;0;Open GRL;
+UPDATE SCORE;4258;4278
+Learning;500;
+UPDATE SCORE;4278;4778
+WALK;20230303;782;
+UPDATE SCORE;4778;5560
+TD_completed;38;Unstop quiz 24th march;50;
+UPDATE SCORE;5560;5610
+DT_Create;1;Vinod eda
+DT_Create;2;Comp rephrase train data
+DT_Create;3;Dsai read all
+ET;Bath;255;
+UPDATE SCORE;5610;5865
+TD_ADD;Vinod cv;
+COMPLETED DT1;Vinod eda;
+UPDATE SCORE;5865;6065
+RT_completed;8;Breakfast;
+UPDATE SCORE;6065;6565
+Learning;100;
+UPDATE SCORE;6565;6665
+NEW DAY;20230305;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Comp rephrase train data;
+TD_ADD;Dsai read all;
+UPDATE SCORE;6665;5665
+DT_Create;1;Vinod digital alpha
+DT_Create;2;Gc da companies
+RT_completed;0;Open GRL;
+UPDATE SCORE;5665;5685
+RT_completed;8;Breakfast;
+UPDATE SCORE;5685;6185
+DT_Create;3;Vnc group
+TD_DEL;11;Add points feature TD;
+WALK;20230304;124;
+UPDATE SCORE;6185;6309
+COMPLETED DT1;Vinod digital alpha;
+UPDATE SCORE;6309;6509
+COMPLETED DT3;Vnc group;
+UPDATE SCORE;6509;6809
+COMPLETED DT2;Gc da companies;
+UPDATE SCORE;6809;7309
+Learning;100;
+UPDATE SCORE;7309;7409
+ET;Bath;230;
+UPDATE SCORE;7409;7639
+RT_completed;6;23:00;
+UPDATE SCORE;7639;7739
+RT_completed;5;Cream night;
+UPDATE SCORE;7739;7839
+NEW DAY;20230306;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;7839;6839
+DT_Create;1;Dsai read all
+TD_DEL;43;Dsai read all;
+TD_completed;41;Vinod cv;50;
+UPDATE SCORE;6839;6889
+TD_DEL;35;Vnc project;
+DT_Create;2;Comp rephrase train data
+TD_DEL;41;Comp rephrase train data;
+DT_Create;3;Clothes
+RT_completed;0;Open GRL;
+UPDATE SCORE;6889;6909
+RT_completed;8;Breakfast;
+UPDATE SCORE;6909;7409
+WALK;20230305;704;
+UPDATE SCORE;7409;8113
+RT_UNDO;8;Breakfast;
+UPDATE SCORE;8113;7613
+RT_ADD;Breakfast;300;
+RT_DEL;8;Breakfast;
+RT_completed;9;Breakfast;
+UPDATE SCORE;7613;7913
+NEW DAY;20230307;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Dsai read all;
+TD_ADD;Comp rephrase train data;
+TD_ADD;Clothes;
+UPDATE SCORE;7913;6913
+ET;Bath;200;
+UPDATE SCORE;6913;7113
+WALK;20230306;611;
+UPDATE SCORE;7113;7724
+DT_Create;1;Gc meet
+DT_Create;2;Dsai over
+TD_completed;43;Clothes;50;
+UPDATE SCORE;7724;7774
+TD_completed;42;Comp rephrase train data;50;
+UPDATE SCORE;7774;7824
+TD_UNDO;42;Comp rephrase train data;
+UPDATE SCORE;7824;7774
+TD_DEL;42;Comp rephrase train data;
+TD_completed;41;Dsai read all;50;
+UPDATE SCORE;7774;7824
+RT_completed;0;Open GRL;
+UPDATE SCORE;7824;7844
+RT_completed;9;Breakfast;
+UPDATE SCORE;7844;8144
+Learning;200;
+UPDATE SCORE;8144;8344
+DT_Create;3;Go daddy x2hr
+COMPLETED DT1;Gc meet;
+UPDATE SCORE;8344;8544
+NEW DAY;20230308;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Dsai over;
+TD_ADD;Go daddy x2hr;
+UPDATE SCORE;8544;7544
+DT_Create;1;Go daddy x2hr
+DT_Create;2;Dsai over
+TD_DEL;44;Go daddy x2hr;
+TD_DEL;43;Dsai over;
+DT_Create;3;React x 1
+WALK;20230307;389;
+UPDATE SCORE;7544;7933
+RT_completed;0;Open GRL;
+UPDATE SCORE;7933;7953
+RT_completed;9;Breakfast;
+UPDATE SCORE;7953;8253
+ET;Bath;150;
+UPDATE SCORE;8253;8403
+COMPLETED DT3;React x 1;
+UPDATE SCORE;8403;8603
+COMPLETED DT2;Dsai over;
+UPDATE SCORE;8603;8903
+RT_completed;8;Call ;
+UPDATE SCORE;8903;9103
+COMPLETED DT1;Go daddy x2hr;
+UPDATE SCORE;9103;9603
+NEW DAY;20230309;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;9603;8603
+WALK;20230308;357;
+UPDATE SCORE;8603;8960
+DT_Create;1;Holts winter
+DT_Create;2;Gc da meet
+DT_Create;3;Term project discussion start
+RT_completed;0;Open GRL;
+UPDATE SCORE;8960;8980
+RT_completed;9;Breakfast;
+UPDATE SCORE;8980;9280
+ET;Brush;50;
+UPDATE SCORE;9280;9330
+COMPLETED DT1;Holts winter;
+UPDATE SCORE;9330;9530
+COMPLETED DT2;Gc da meet;
+UPDATE SCORE;9530;9830
+RT_completed;3;Medicine night;
+UPDATE SCORE;9830;9930
+Learning;100;
+UPDATE SCORE;9930;10030
+ET;Bath;150;
+UPDATE SCORE;10030;10180
+NEW DAY;20230310;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Term project discussion start;
+UPDATE SCORE;10180;9180
+WALK;20230309;468;
+UPDATE SCORE;9180;9648
+DT_Create;1;Class
+DT_Create;2;Gc cnn
+DT_Create;3;Pdq + holts winter
+RT_completed;0;Open GRL;
+UPDATE SCORE;9648;9668
+RT_completed;9;Breakfast;
+UPDATE SCORE;9668;9968
+COMPLETED DT1;Class;
+UPDATE SCORE;9968;10168
+NEW DAY;20230311;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Gc cnn;
+TD_ADD;Pdq + holts winter;
+UPDATE SCORE;10168;9168
+RT_completed;0;Open GRL;
+UPDATE SCORE;9168;9188
+RT_completed;9;Breakfast;
+UPDATE SCORE;9188;9488
+DT_Create;1;Confusion matrix 
+TD_ADD;Confusion matrix;
+DT_Create;2;Gc cnn
+TD_DEL;44;Gc cnn;
+DT_Create;3;Gc meet
+WALK;20230310;490;
+UPDATE SCORE;9488;9978
+NEW DAY;20230312;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Confusion matrix ;
+TD_ADD;Gc cnn;
+TD_ADD;Gc meet;
+UPDATE SCORE;9978;8978
+TD_completed;48;Gc meet;50;
+UPDATE SCORE;8978;9028
+RT_completed;0;Open GRL;
+UPDATE SCORE;9028;9048
+RT_completed;9;Breakfast;
+UPDATE SCORE;9048;9348
+WALK;20230311;467;
+UPDATE SCORE;9348;9815
+TD_completed;46;Confusion matrix ;50;
+UPDATE SCORE;9815;9865
+TD_completed;45;Confusion matrix;50;
+UPDATE SCORE;9865;9915
+NEW DAY;20230313;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;9915;8915
+WALK;20230312;340;
+UPDATE SCORE;8915;9255
+DT_Create;1;Scrap gc
+DT_Create;2;Gc cnn
+TD_DEL;47;Gc cnn;
+RT_completed;0;Open GRL;
+UPDATE SCORE;9255;9275
+RT_completed;9;Breakfast;
+UPDATE SCORE;9275;9575
+DT_Create;3;Gc+
+NEW DAY;20230314;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Scrap gc;
+TD_ADD;Gc cnn;
+TD_ADD;Gc+;
+UPDATE SCORE;9575;8575
+DT_Create;1;Vinod digital alpha
+DT_Create;2;Trim nails
+DT_Create;3;Sine model fit /ifft
+TD_DEL;50;Gc+;
+WALK;20230313;793;
+UPDATE SCORE;8575;9368
+TD_ADD;Bring soap (cloth);
+RT_completed;0;Open GRL;
+UPDATE SCORE;9368;9388
+RT_completed;9;Breakfast;
+UPDATE SCORE;9388;9688
+COMPLETED DT2;Trim nails;
+UPDATE SCORE;9688;9888
+COMPLETED DT3;Sine model fit /ifft;
+UPDATE SCORE;9888;10188
+COMPLETED DT1;Vinod digital alpha;
+UPDATE SCORE;10188;10688
+UNDO DT1;Vinod digital alpha;
+UPDATE SCORE;10688;10188
+COMPLETED DT1;Vinod digital alpha;
+UPDATE SCORE;10188;10688
+TD_completed;48;Scrap gc;322;
+UPDATE SCORE;10688;11010
+TD_DEL;44;Pdq + holts winter;
+TD_DEL;43;Term project discussion start;
+NEW DAY;20230315;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;11010;10010
+WALK;20230314;293;
+UPDATE SCORE;10010;10303
+DT_Create;1;Vnc/ml
+RT_completed;0;Open GRL;
+UPDATE SCORE;10303;10323
+RT_completed;9;Breakfast;
+UPDATE SCORE;10323;10623
+DT_Create;2;Cloth get back + soap
+TD_DEL;48;Bring soap (cloth);
+DT_Create;3;Fft x1hr
+ET;Chess;100;
+UPDATE SCORE;10623;10723
+COMPLETED DT1;Vnc/ml;
+UPDATE SCORE;10723;10923
+COMPLETED DT2;Cloth get back + soap;
+UPDATE SCORE;10923;11223
+TD_ADD;Fft x1hr;
+DT_Create;3;Blitz x1
+COMPLETED DT3;Blitz x1;
+UPDATE SCORE;11223;11723
+NEW DAY;20230316;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;11723;10723
+WALK;20230315;606;
+UPDATE SCORE;10723;11329
+ET;Bath;150;
+UPDATE SCORE;11329;11479
+RT_completed;0;Open GRL;
+UPDATE SCORE;11479;11499
+RT_completed;9;Breakfast;
+UPDATE SCORE;11499;11799
+DT_Create;1;Blitz home1
+DT_Create;2;Box reapir
+DT_Create;3;Immune Book x 10 chapter
+COMPLETED DT2;Box reapir;
+UPDATE SCORE;11799;11999
+Learning;100;
+UPDATE SCORE;11999;12099
+Learning;100;
+UPDATE SCORE;12099;12199
+Learning;200;
+UPDATE SCORE;12199;12399
+ET;watch;-100;
+UPDATE SCORE;12399;12299
+COMPLETED DT1;Blitz home1;
+UPDATE SCORE;12299;12599
+COMPLETED DT3;Immune Book x 10 chapter;
+UPDATE SCORE;12599;13099
+RT_completed;5;Cream night;
+UPDATE SCORE;13099;13199
+RT_completed;2;Book reading 15 pages;
+UPDATE SCORE;13199;13349
+RT_completed;3;Medicine night;
+UPDATE SCORE;13349;13449
+NEW DAY;20230317;DAILY CHARGE;
+RESET_DT;
+UPDATE SCORE;13449;12449
+DT_Create;1;Hair cut
+WALK;20230316;365;
+UPDATE SCORE;12449;12814
+DT_Create;2;Blitz home1
+RT_completed;0;Open GRL;
+UPDATE SCORE;12814;12834
+TD_ADD;Add 1% feature;
+COMPLETED DT1;Hair cut;
+UPDATE SCORE;12834;13034
+DT_Create;3;1%feature
+TD_DEL;49;Add 1% feature;
+TD_ADD;Laundry;
+RT_DEL;3;Medicine night;
+NEW DAY;20230318;DAILY CHARGE;
+RESET_DT;
+TD_ADD;Blitz home1;
+TD_ADD;1%feature;
+UPDATE SCORE;13034;12034
+TD_completed;49;Laundry;50;
+UPDATE SCORE;12034;12084
+RT_completed;0;Open GRL;
+UPDATE SCORE;12084;12104
+RT_completed;8;Breakfast;
+UPDATE SCORE;12104;12404
+DT_Create;1;1%feature
+Learning;300;
+UPDATE SCORE;12404;12704
+TD_DEL;51;1%feature;
+DT_Create;2;Blitz home1
+DT_Create;3;Immune Book x 10 chapter
+TD_DEL;50;Blitz home1;
+WALK;20230317;549;
+UPDATE SCORE;12704;13253
+COMPLETED DT2;Blitz home1;
+UPDATE SCORE;13253;13453
+TD_ADD;commenting and cleaning grl code;
+COMPLETED DT1;1%feature;
+UPDATE SCORE;13453;13753
+COMPLETED DT3;Immune Book x 10 chapter;
+UPDATE SCORE;13753;14253
+RT_completed;2;Book reading 15 pages;
+UPDATE SCORE;14253;14403
+RT_completed;4;Cream night;
+UPDATE SCORE;14403;14503
+RT_completed;3;Cream evening;
+UPDATE SCORE;14503;14603
+RT_DEL;1;Varsity;
+RT_ADD;Varsity;500;
+Learning;100;
+UPDATE SCORE;14603;14703
+NEW DAY;20230319;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;14703
+UPDATE SCORE;14703;13703
+WALK;20230318;573;
+UPDATE SCORE;13703;14276
+DT_Create;1;Blitz complete
+DT_Create;2;edit button for tasks
+DT_Create;3;immune x 10 chap
+RT_completed;0;Open GRL;
+UPDATE SCORE;14276;14296
+RT_completed;7;Breakfast;
+UPDATE SCORE;14296;14596
+RT_DEL;6;Call ;
+RT_ADD;Call;400;
+Learning;100;
+UPDATE SCORE;14596;14696
+TD_ADD;Bot for gfg;
+RT_completed;8;Call;
+UPDATE SCORE;14696;15096
+COMPLETED DT2;edit button for tasks;
+UPDATE SCORE;15096;15296
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;15296;15446
+TD_completed;18;Completed to do visibility limited;50;
+UPDATE SCORE;15446;15496
+NEW DAY;20230320;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;15496
+TD_ADD;Blitz complete;
+TD_ADD;immune x 10 chap;
+UPDATE SCORE;15496;14496
+RT_completed;0;Open GRL;
+UPDATE SCORE;14496;14516
+WALK;20230319;549;
+UPDATE SCORE;14516;15065
+DT_Create;1;Immune Book x 10 chapter
+TD_DEL;53;immune x 10 chap;
+DT_Create;2;Java script complete editablity
+DT_Create;3;Dependable x1 pdf
+DT_Create;3;Blitz complete
+TD_DEL;52;Blitz complete;
+Learning;100;
+UPDATE SCORE;15065;15165
+ET;Bath;150;
+UPDATE SCORE;15165;15315
+COMPLETED DT2;Java script complete editablity;
+UPDATE SCORE;15315;15515
+RT_completed;8;Call;
+UPDATE SCORE;15515;15915
+COMPLETED DT3;Blitz complete;
+UPDATE SCORE;15915;16215
+RT_completed;3;Cream night;
+UPDATE SCORE;16215;16315
+COMPLETED DT1;Immune Book x 10 chapter;
+UPDATE SCORE;16315;16815
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;16815;16965
+TD_completed;10;Extension;667;
+UPDATE SCORE;16965;17632
+NEW DAY;20230321;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;17632
+UPDATE SCORE;17632;16632
+RT_completed;0;Open GRL;
+UPDATE SCORE;16632;16652
+RT_completed;6;Breakfast;
+UPDATE SCORE;16652;16952
+DT_Create;1;complete flask api
+ET;Extras;50;
+UPDATE SCORE;16952;17002
+WALK;20230320;295;
+UPDATE SCORE;17002;17297
+DT_Create;2;how to scrape password web
+DT_Create;3;dsai 5 page
+COMPLETED DT1;complete flask api;
+UPDATE SCORE;17297;17497
+TD_ADD;Edit button for rt + Push edit button;
+ET;Extras;2;
+UPDATE SCORE;17497;17499
+COMPLETED DT2;how to scrape password web;
+UPDATE SCORE;17499;17799
+UNDO DT2;how to scrape password web;
+UPDATE SCORE;17799;17499
+ET;bath;150;
+UPDATE SCORE;17499;17649
+COMPLETED DT2;how to scrape password web;
+UPDATE SCORE;17649;17949
+TD_DEL;51;Bot for gfg;
+RT_ADD;GFG potd;500;
+RT_completed;9;GFG potd;
+UPDATE SCORE;17949;18449
+TD_ADD;Plan and bin x1;
+COMPLETED DT3;dsai 5 page;
+UPDATE SCORE;18449;18949
+RT_completed;2;Cream evening;
+UPDATE SCORE;18949;19049
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;19049;19199
+RT_completed;3;Cream night;
+UPDATE SCORE;19199;19299
+NEW DAY;20230322;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;19299
+UPDATE SCORE;19299;18299
+DT_Create;1;Communique
+RT_completed;0;Open GRL;
+UPDATE SCORE;18299;18319
+WALK;20230321;724;
+UPDATE SCORE;18319;19043
+DT_Create;2;Plan and bin trajectories (pers+prof)
+TD_DEL;52;Plan and bin x1;
+DT_Create;3;Heat transfer get resource
+RT_completed;9;GFG potd;
+UPDATE SCORE;19043;19543
+TD_ADD;Heat transfer complete;
+RT_ADD;Acad heat tf x15 pg;150;
+COMPLETED DT3;Heat transfer get resource;
+UPDATE SCORE;19543;19743
+TD_ADD;Prince regarding dsai;
+COMPLETED DT1;Communique;
+UPDATE SCORE;19743;20043
+TD_ADD;Ping MS seniors;
+RT_completed;7;Varsity;
+UPDATE SCORE;20043;20543
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;20543;20693
+COMPLETED DT2;Plan and bin trajectories (pers+prof);
+UPDATE SCORE;20693;21193
+TD_ADD;Tool for drawing trajectory;
+TD_completed;53;Prince regarding dsai;67;
+UPDATE SCORE;21193;21260
+RT_completed;10;Acad heat tf x15 pg;
+UPDATE SCORE;21260;21410
+RT_completed;2;Cream evening;
+UPDATE SCORE;21410;21510
+NEW DAY;20230323;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;21510
+UPDATE SCORE;21510;20510
+RT_completed;0;Open GRL;
+UPDATE SCORE;20510;20530
+DT_Create;1;Dsai 1 pdf
+DT_Create;2;Edit button for rt + Push edit button
+RT_completed;6;Breakfast;
+UPDATE SCORE;20530;20830
+RT_completed;9;GFG potd;
+UPDATE SCORE;20830;21330
+WALK;20230322;415;
+UPDATE SCORE;21330;21745
+RT_completed;10;Acad heat tf x15 pg;
+UPDATE SCORE;21745;21895
+DT_Create;3;2nd yr meet
+RT_ADD;creativity exercise;500;
+RT_completed;11;creativity exercise;
+UPDATE SCORE;21895;22395
+TD_UPDATE;55;Tool for drawing trajectory;Tool for drawing trajectory (flowcharts);
+TD_UPDATE;52;Heat transfer complete;Heat transfer complete ;
+RT_UPDATE;8;Call;Call ;500;
+COMPLETED DT2;Edit button for rt + Push edit button;
+UPDATE SCORE;22395;22595
+COMPLETED DT1;Dsai 1 pdf;
+UPDATE SCORE;22595;22895
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;22895;23045
+COMPLETED DT3;2nd yr meet;
+UPDATE SCORE;23045;23545
+RT_completed;7;Varsity;
+UPDATE SCORE;23545;24045
+Learning;200;
+UPDATE SCORE;24045;24245
+RT_completed;3;Cream night;
+UPDATE SCORE;24245;24345
+NEW DAY;20230324;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;24345
+UPDATE SCORE;24345;23345
+WALK;20230323;881;
+UPDATE SCORE;23345;24226
+DT_Create;1;Ask anirvan viva
+RT_completed;0;Open GRL;
+UPDATE SCORE;24226;24246
+DT_Create;2;Read viva questions
+RT_completed;6;Breakfast;
+UPDATE SCORE;24246;24546
+DT_Create;3;Dsai 2 pdf
+COMPLETED DT1;Ask anirvan viva;
+UPDATE SCORE;24546;24746
+RT_completed;2;Cream evening;
+UPDATE SCORE;24746;24846
+RT_completed;9;GFG potd;
+UPDATE SCORE;24846;25346
+COMPLETED DT2;Read viva questions;
+UPDATE SCORE;25346;25646
+TD_completed;51;Edit button for rt + Push edit button;50;
+UPDATE SCORE;25646;25696
+TD_ADD;Buy a pen;
+RT_completed;3;Cream night;
+UPDATE SCORE;25696;25796
+NEW DAY;20230325;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;25796
+TD_ADD;Dsai 2 pdf;
+UPDATE SCORE;25796;24796
+RT_completed;0;Open GRL;
+UPDATE SCORE;24796;24816
+RT_completed;9;GFG potd;
+UPDATE SCORE;24816;25316
+RT_completed;6;Breakfast;
+UPDATE SCORE;25316;25616
+DT_Create;3;Heat transfer 100 pg
+DT_Create;2;Dsai 1 pdf
+TD_DEL;57;Dsai 2 pdf;
+DT_Create;1;RTSM check
+COMPLETED DT3;Heat transfer 100 pg;
+UPDATE SCORE;25616;25816
+RT_completed;10;Acad heat tf x15 pg;
+UPDATE SCORE;25816;25966
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;25966;26116
+TD_ADD;Gandhi nom ml;
+ET;Bath;200;
+UPDATE SCORE;26116;26316
+COMPLETED DT2;Dsai 1 pdf;
+UPDATE SCORE;26316;26616
+WALK;20230324;563;
+UPDATE SCORE;26616;27179
+DT_Create;1;Gandhi nom ml
+TD_completed;57;Gandhi nom ml;50;
+UPDATE SCORE;27179;27229
+TD_UNDO;57;Gandhi nom ml;
+UPDATE SCORE;27229;27179
+TD_UPDATE;57;Gandhi nom ml;RTSM check;
+COMPLETED DT1;Gandhi nom ml;
+UPDATE SCORE;27179;27679
+TD_completed;57;RTSM check;456;
+UPDATE SCORE;27679;28135
+TD_ADD;RTSM delayed but start again;
+TD_completed;52;Heat transfer complete ;349;
+UPDATE SCORE;28135;28484
+TD_ADD;maths for finance;
+TD_completed;13;Walk Tab;237;
+UPDATE SCORE;28484;28721
+TD_completed;12;Learning chunks tab;76;
+UPDATE SCORE;28721;28797
+TD_completed;11;Increase usage;109;
+UPDATE SCORE;28797;28906
+TD_completed;5;Think about to do ad DT and reset;803;
+UPDATE SCORE;28906;29709
+NEW DAY;20230326;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;29709
+UPDATE SCORE;29709;28709
+DT_Create;1;Mos
+RT_UPDATE;10;Acad heat tf x15 pg;Acad mos x15 pg ;150;
+RT_completed;0;Open GRL;
+UPDATE SCORE;28709;28729
+DT_Create;2;Call 2pm
+RT_completed;6;Breakfast;
+UPDATE SCORE;28729;29029
+DT_Create;3;Dsai 1 pdf 
+TD_ADD;Gandhi nom ml;
+COMPLETED DT1;Mos;
+UPDATE SCORE;29029;29229
+TD_ADD;Teach mos;
+COMPLETED DT2;Call 2pm;
+UPDATE SCORE;29229;29529
+RT_ADD;clean mouse keyboard laptop;100;
+RT_completed;10;Acad mos x15 pg ;
+UPDATE SCORE;29529;29679
+RT_completed;9;GFG potd;
+UPDATE SCORE;29679;30179
+COMPLETED DT3;Dsai 1 pdf ;
+UPDATE SCORE;30179;30679
+RT_UPDATE;12;clean mouse keyboard laptop;clean laptop ;50;
+RT_ADD;clean mouse keyboard;50;
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;30679;30729
+RT_completed;12;clean laptop ;
+UPDATE SCORE;30729;30779
+TD_ADD;IDEA Increment point with day fo rt;
+RT_completed;11;creativity exercise;
+UPDATE SCORE;30779;31279
+RT_completed;2;Cream evening;
+UPDATE SCORE;31279;31379
+WALK;20230325;229;
+UPDATE SCORE;31379;31608
+ET;Bath;150;
+UPDATE SCORE;31608;31758
+TD_completed;60;Gandhi nom ml;108;
+UPDATE SCORE;31758;31866
+TD_ADD;Find drawing tool be persistent;
+RT_completed;1;Book reading 15 pages;
+UPDATE SCORE;31866;32016
+TD_completed;61;Teach mos;198;
+UPDATE SCORE;32016;32214
+NEW DAY;20230327;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;32214
+UPDATE SCORE;32214;31214
+DT_Create;1;viva
+DT_Create;2;Dsai 1 pdf
+WALK;20230326;712;
+UPDATE SCORE;31214;31926
+COMPLETED DT1;viva;
+UPDATE SCORE;31926;32126
+RT_completed;0;Open GRL;
+UPDATE SCORE;32126;32146
+RT_completed;9;GFG potd;
+UPDATE SCORE;32146;32646
+RT_completed;6;Breakfast;
+UPDATE SCORE;32646;32946
+RT_completed;10;Acad mos x15 pg ;
+UPDATE SCORE;32946;33096
+RT_UNDO;10;Acad mos x15 pg ;
+UPDATE SCORE;33096;32946
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;32946;32996
+RT_completed;12;clean laptop ;
+UPDATE SCORE;32996;33046
+RT_UPDATE;1;Book reading 15 pages;Book reading 15 pages ;300;
+DT_Create;3;mtm over
+TD_ADD;hall day tejas;
+COMPLETED DT2;Dsai 1 pdf;
+UPDATE SCORE;33046;33346
+TD_ADD;hall day saransh;
+RT_completed;2;Cream evening;
+UPDATE SCORE;33346;33446
+RT_completed;10;Acad mos x15 pg ;
+UPDATE SCORE;33446;33596
+DT_Create;3;casting
+TD_ADD;cleaned room;
+DT_Create;3;chill
+COMPLETED DT3;chill;
+UPDATE SCORE;33596;34096
+TD_completed;66;cleaned room;475;
+UPDATE SCORE;34096;34571
+TD_completed;65;hall day saransh;101;
+UPDATE SCORE;34571;34672
+TD_completed;64;hall day tejas;349;
+UPDATE SCORE;34672;35021
+TD_UPDATE;62;IDEA Increment point with day fo rt;IDEA Increment point with day for rt ;
+NEW DAY;20230328;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;35021
+UPDATE SCORE;35021;34021
+RT_completed;0;Open GRL;
+UPDATE SCORE;34021;34041
+DT_Create;1;Meet apoorv
+DT_Create;2;Clothes for laundry
+DT_Create;3;Dsai
+TD_ADD;Cf+-w complete;
+COMPLETED DT3;Dsai;
+UPDATE SCORE;34041;34241
+COMPLETED DT1;Meet apoorv;
+UPDATE SCORE;34241;34541
+COMPLETED DT2;Clothes for laundry;
+UPDATE SCORE;34541;35041
+UNDO DT2;Clothes for laundry;
+UPDATE SCORE;35041;34541
+TD_ADD;Mtm read;
+TD_completed;67;Cf+-w complete;50;
+UPDATE SCORE;34541;34591
+TD_completed;68;Mtm read;50;
+UPDATE SCORE;34591;34641
+RT_completed;6;Breakfast;
+UPDATE SCORE;34641;34941
+TD_ADD;Fluid basic navier;
+WALK;20230327;1121;
+UPDATE SCORE;34941;36062
+TD_completed;69;Fluid basic navier;50;
+UPDATE SCORE;36062;36112
+TD_ADD;Viva;
+TD_completed;70;Viva;50;
+UPDATE SCORE;36112;36162
+RT_completed;9;GFG potd;
+UPDATE SCORE;36162;36662
+RT_completed;10;Acad mos x15 pg ;
+UPDATE SCORE;36662;36812
+NEW DAY;20230330;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;35812
+TD_ADD;Clothes for laundry;
+UPDATE SCORE;36812;34812
+DT_Create;1;moulic pdf x1
+RT_completed;0;Open GRL;
+UPDATE SCORE;34812;34832
+RT_UPDATE;10;Acad mos x15 pg ;Acad chmt x15 pg  ;150;
+RT_completed;12;clean laptop ;
+UPDATE SCORE;34832;34882
+DT_Create;2;read piyush research paper
+DT_Create;3;fnv test
+RT_completed;9;GFG potd;
+UPDATE SCORE;34882;35382
+WALK;20230329;970;
+UPDATE SCORE;35382;36352
+TD_ADD;vinod push extension code;
+ET;Fooled;-500;
+UPDATE SCORE;36352;35852
+COMPLETED DT3;fnv test;
+UPDATE SCORE;35852;36052
+RT_completed;6;Breakfast;
+UPDATE SCORE;36052;36352
+RT_completed;1;Book reading 15 pages ;
+UPDATE SCORE;36352;36652
+RT_completed;10;Acad chmt x15 pg  ;
+UPDATE SCORE;36652;36802
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;36802;36852
+RT_completed;11;creativity exercise;
+UPDATE SCORE;36852;37352
+COMPLETED DT1;moulic pdf x1;
+UPDATE SCORE;37352;37652
+COMPLETED DT2;read piyush research paper;
+UPDATE SCORE;37652;38152
+TD_completed;71;Clothes for laundry;289;
+UPDATE SCORE;38152;38441
+NEW DAY;20230331;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;38441
+UPDATE SCORE;38441;37441
+DT_Create;1;Moulic pdf all
+DT_Create;2;Clothes back
+RT_completed;0;Open GRL;
+UPDATE SCORE;37441;37461
+WALK;20230330;284;
+UPDATE SCORE;37461;37745
+RT_completed;6;Breakfast;
+UPDATE SCORE;37745;38045
+DT_Create;3;Rtsm x2 pdf
+TD_ADD;Piyush btp ;
+TD_ADD;Moulic exam;
+RT_completed;12;clean laptop ;
+UPDATE SCORE;38045;38095
+RT_completed;9;GFG potd;
+UPDATE SCORE;38095;38595
+COMPLETED DT1;Moulic pdf all;
+UPDATE SCORE;38595;38795
+RT_completed;10;Acad chmt x15 pg  ;
+UPDATE SCORE;38795;38945
+COMPLETED DT2;Clothes back;
+UPDATE SCORE;38945;39245
+COMPLETED DT3;Rtsm x2 pdf;
+UPDATE SCORE;39245;39745
+RT_completed;11;creativity exercise;
+UPDATE SCORE;39745;40245
+RT_completed;8;Call ;
+UPDATE SCORE;40245;40745
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;40745;40795
+TD_completed;74;Moulic exam;292;
+UPDATE SCORE;40795;41087
+RT_completed;1;Book reading 15 pages ;
+UPDATE SCORE;41087;41387
+NEW DAY;20230401;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;41387
+UPDATE SCORE;41387;40387
+ET;extra;28;
+UPDATE SCORE;40387;40415
+ET;extra;28;
+UPDATE SCORE;40415;40443
+ET;extra ;-28;
+UPDATE SCORE;40443;40415
+DT_Create;1;Rtsm x2 pdf
+DT_Create;2;TD urg + imp feature create
+DT_Create;2;filter for task
+TD_DEL;62;IDEA Increment point with day for rt ;
+TD_DEL;48;Fft x1hr;
+RT_completed;0;Open GRL;
+UPDATE SCORE;40415;40435
+RT_completed;12;clean laptop ;
+UPDATE SCORE;40435;40485
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;40485;40535
+RT_completed;9;GFG potd;
+UPDATE SCORE;40535;41035
+RT_completed;11;creativity exercise;
+UPDATE SCORE;41035;41535
+RT_UPDATE;10;Acad chmt x15 pg  ;Acad electronic x15 pg   ;150;
+WALK;20230331;458;
+UPDATE SCORE;41535;41993
+RT_UPDATE;1;Book reading 15 pages ;Book reading 25 pages  ;500;
+DT_Create;3;look for extra point activity
+DT_Create;1;Rtsm x1 pdf
+COMPLETED DT1;Rtsm x1 pdf;
+UPDATE SCORE;41993;42193
+TD_ADD;find pain points and note them in ideapad;
+COMPLETED DT3;look for extra point activity;
+UPDATE SCORE;42193;42493
+ET;ideapad;300;
+UPDATE SCORE;42493;42793
+TD_ADD;ideapad points;
+TD_ADD;incorporate access to Sheets in GRL;
+TD_completed;73;find pain points and note them in ideapad;50;
+UPDATE SCORE;42793;42843
+TD_ADD;documanation;
+TD_UPDATE;76;documanation;documanation GRL;
+TD_ADD;restructure grl a lot to scale IMPORTANT;
+COMPLETED DT2;filter for task;
+UPDATE SCORE;42843;43343
+RT_completed;10;Acad electronic x15 pg   ;
+UPDATE SCORE;43343;43493
+RT_UNDO;10;Acad electronic x15 pg   ;
+UPDATE SCORE;43493;43343
+RT_completed;1;Book reading 25 pages  ;
+UPDATE SCORE;43343;43843
+RT_completed;8;Call ;
+UPDATE SCORE;43843;44343
+TD_completed;70;vinod push extension code;91;
+UPDATE SCORE;44343;44434
+NEW DAY;20230402;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;44434
+UPDATE SCORE;44434;43434
+RT_completed;0;Open GRL;
+UPDATE SCORE;43434;43454
+DT_Create;1;Rtsm x1 pdf
+DT_Create;2;Restructure TD code
+DT_Create;2;Restructure TD code amd document
+DT_Create;3;Look into drawing tool 
+RT_completed;6;Breakfast;
+UPDATE SCORE;43454;43754
+RT_completed;12;clean laptop ;
+UPDATE SCORE;43754;43804
+RT_completed;9;GFG potd;
+UPDATE SCORE;43804;44304
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;44304;44354
+RT_completed;11;creativity exercise;
+UPDATE SCORE;44354;44854
+COMPLETED DT1;Rtsm x1 pdf;
+UPDATE SCORE;44854;45054
+TD_ADD;class song;
+TD_ADD;Laundry;
+ET;ideapad;100;
+UPDATE SCORE;45054;45154
+RT_completed;10;Acad electronic x15 pg   ;
+UPDATE SCORE;45154;45304
+DT_Create;2;Split grl class
+TD_ADD;Create api and flask structure;
+WALK;20230401;1028;
+UPDATE SCORE;45304;46332
+RT_completed;7;Varsity;
+UPDATE SCORE;46332;46832
+COMPLETED DT2;Split grl class;
+UPDATE SCORE;46832;47132
+RT_completed;8;Call ;
+UPDATE SCORE;47132;47632
+COMPLETED DT3;Look into drawing tool ;
+UPDATE SCORE;47632;48132
+UNDO DT3;Look into drawing tool ;
+UPDATE SCORE;48132;47632
+NEW DAY;20230403;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;47632
+TD_ADD;Look into drawing tool ;
+UPDATE SCORE;47632;46632
+WALK;20230402;873;
+UPDATE SCORE;46632;47505
+DT_Create;1;Vnc meet
+DT_Create;3;Plan schedule
+ET;ideapad;600;
+UPDATE SCORE;47505;48105
+DT_Create;2;Revamp GRL
+RT_completed;0;Open GRL;
+UPDATE SCORE;48105;48125
+RT_completed;12;clean laptop ;
+UPDATE SCORE;48125;48175
+RT_completed;9;GFG potd;
+UPDATE SCORE;48175;48675
+RT_ADD;108 namokar;540;
+TD_ADD;seperate profiles in browser to do seperate work;
+COMPLETED DT2;Revamp GRL;
+UPDATE SCORE;48675;48875
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;48875;48925
+TD_UPDATE;80;Create api and flask structure;Create flask structure ;
+TD_ADD;flask break in api;
+TD_ADD;khari sing ka packet;
+COMPLETED DT3;Plan schedule;
+UPDATE SCORE;48925;49225
+COMPLETED DT1;Vnc meet;
+UPDATE SCORE;49225;49725
+RT_completed;8;Call ;
+UPDATE SCORE;49725;50225
+NEW DAY;20230404;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;50225
+UPDATE SCORE;50225;49225
+DT_Create;1;Vote
+DT_Create;2;Dsai asgn
+DT_Create;3;Dsai asgn
+RT_completed;0;Open GRL;
+UPDATE SCORE;49225;49245
+RT_completed;6;Breakfast;
+UPDATE SCORE;49245;49545
+WALK;20230403;736;
+UPDATE SCORE;49545;50281
+RT_completed;9;GFG potd;
+UPDATE SCORE;50281;50781
+RT_completed;12;clean laptop ;
+UPDATE SCORE;50781;50831
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;50831;50881
+COMPLETED DT2;Dsai asgn;
+UPDATE SCORE;50881;51081
+COMPLETED DT1;Vote;
+UPDATE SCORE;51081;51381
+COMPLETED DT3;Dsai asgn;
+UPDATE SCORE;51381;51881
+TD_completed;80;Create flask structure ;108;
+UPDATE SCORE;51881;51989
+TD_completed;79;Laundry;197;
+UPDATE SCORE;51989;52186
+RT_completed;10;Acad electronic x15 pg   ;
+UPDATE SCORE;52186;52336
+NEW DAY;20230405;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;52336
+UPDATE SCORE;52336;51336
+NEW DAY;20230406;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;51336
+UPDATE SCORE;51336;50336
+RT_completed;0;Open GRL;
+UPDATE SCORE;50336;50356
+DT_Create;1;Blazer
+COMPLETED DT1;Blazer;
+UPDATE SCORE;50356;50556
+WALK;20230405;821;
+UPDATE SCORE;50556;51377
+RT_completed;14;108 namokar;
+UPDATE SCORE;51377;51917
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;51917;51967
+RT_completed;12;clean laptop ;
+UPDATE SCORE;51967;52017
+RT_completed;9;GFG potd;
+UPDATE SCORE;52017;52517
+DT_Create;2;Get API all create
+DT_Create;3;Rtsm x1 pdf
+RT_completed;6;Breakfast;
+UPDATE SCORE;52517;52817
+RT_ADD;ping ms seniors;100;
+TD_ADD;piyush lab;
+DT_Create;2;pOST api ALL
+COMPLETED DT3;Rtsm x1 pdf;
+UPDATE SCORE;52817;53117
+RT_completed;11;creativity exercise;
+UPDATE SCORE;53117;53617
+RT_completed;8;Call ;
+UPDATE SCORE;53617;54117
+NEW DAY;20230407;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;54117
+TD_ADD;pOST api ALL;
+UPDATE SCORE;54117;53117
+RT_completed;0;Open GRL;
+UPDATE SCORE;53117;53137
+WALK;20230406;1096;
+UPDATE SCORE;53137;54233
+DT_Create;1;class song
+DT_Create;2;anova close
+DT_Create;3;pOST api ALL
+TD_DEL;86;pOST api ALL;
+RT_completed;9;GFG potd;
+UPDATE SCORE;54233;54733
+RT_completed;6;Breakfast;
+UPDATE SCORE;54733;55033
+RT_completed;12;clean laptop ;
+UPDATE SCORE;55033;55083
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;55083;55133
+ET;bath;270;
+UPDATE SCORE;55133;55403
+COMPLETED DT1;class song;
+UPDATE SCORE;55403;55603
+NEW DAY;20230408;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;55603
+TD_ADD;anova close;
+TD_ADD;pOST api ALL;
+UPDATE SCORE;55603;54603
+RT_completed;0;Open GRL;
+UPDATE SCORE;54603;54623
+WALK;20230407;995;
+UPDATE SCORE;54623;55618
+RT_completed;6;Breakfast;
+UPDATE SCORE;55618;55918
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;55918;55968
+RT_completed;12;clean laptop ;
+UPDATE SCORE;55968;56018
+RT_completed;9;GFG potd;
+UPDATE SCORE;56018;56518
+DT_Create;1;pOST api ALL
+DT_Create;2;anova close
+TD_DEL;86;anova close;
+DT_Create;3;vivek vnc
+COMPLETED DT1;pOST api ALL;
+UPDATE SCORE;56518;56718
+COMPLETED DT3;vivek vnc;
+UPDATE SCORE;56718;57018
+RT_completed;11;creativity exercise;
+UPDATE SCORE;57018;57518
+TD_completed;78;class song;50;
+UPDATE SCORE;57518;57568
+RT_completed;1;Book reading 25 pages  ;
+UPDATE SCORE;57568;58068
+ET;Bath;150;
+UPDATE SCORE;58068;58218
+NEW DAY;20230409;DAILY CHARGE;
+RESET_DT;
+LAST SCORE;58218
+TD_ADD;anova close;
+UPDATE SCORE;58218;57218
+WALK;20230408;650;
+UPDATE SCORE;57218;57868
+DT_Create;1;vnc
+DT_Create;2;backend shift
+RT_completed;0;Open GRL;
+UPDATE SCORE;57868;57888
+RT_completed;6;Breakfast;
+UPDATE SCORE;57888;58188
+RT_completed;12;clean laptop ;
+UPDATE SCORE;58188;58238
+RT_completed;13;clean mouse keyboard;
+UPDATE SCORE;58238;58288
+RT_completed;9;GFG potd;
+UPDATE SCORE;58288;58788
+COMPLETED DT2;backend shift;
+UPDATE SCORE;58788;58988
+COMPLETED DT1;vnc;
+UPDATE SCORE;58988;59288
+COMPLETED DT3;Add Daily Task;
+UPDATE SCORE;59288;59788
+TD_completed;86;pOST api ALL;605;
+UPDATE SCORE;59788;60393
+TD_completed;85;piyush lab;602;
+UPDATE SCORE;60393;60995
+TD_completed;83;flask break in api;397;
+UPDATE SCORE;60995;61392
+RT_completed;15;ping ms seniors;
+UPDATE SCORE;61392;61492
+RT_completed;11;creativity exercise;
+UPDATE SCORE;61492;61992

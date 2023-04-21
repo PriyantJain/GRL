@@ -196,9 +196,10 @@ class GRL_class:
         if task == 'Walk' : 
             self.db.add_log.append('WALK;{};{};'.format(_before, value//10))
             new_score = self.score + value // 10  
-        elif task == 'Learning' : 
-            self.db.add_log.append('Learning;{};'.format(value * 100))
+        elif task == 'Learning' or task == 'Brainpad': 
+            self.db.add_log.append('{};{};'.format(task, value * 100))
             new_score = self.score + value * 100
+
         
         self.db.add_log.append('UPDATE SCORE;' + str(old_score) + ';' + str(new_score))
         self.db.update_score(old_score, new_score)

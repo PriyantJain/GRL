@@ -1,4 +1,4 @@
-sheets_db_key = "11glFKrtVXULhoUB5h4LgQOoJlt3ckuCaI4SRX_E-eng"
+sheets_db_key = SHEETS_KEY
 
 # # backend configurations
 # app.config['MYSQL_HOST'] = 'localhost'

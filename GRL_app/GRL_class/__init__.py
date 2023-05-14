@@ -68,7 +68,7 @@ class GRL_class:
     
     @property
     def today_target(self) :
-        return int(int(self.variables['Last_Day_Score']) * (0.9 if int(self.variables['Last_Day_Score']) < 0 else 1.1))
+        return int(int(self.variables['Last_Day_Score']) * (0.95 if int(self.variables['Last_Day_Score']) < 0 else 1.05))
     
         
     def DtCreateSubmit(self, task_no, task):

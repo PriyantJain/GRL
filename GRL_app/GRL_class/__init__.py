@@ -68,7 +68,7 @@ class GRL_class:
     
     @property
     def today_target(self) :
-        return int(int(self.variables['Last_Day_Score']) * (0.9 if int(self.variables['Last_Day_Score']) < 0 else 1.1))
+        return int(int(self.variables['Last_Day_Score']) * (0.95 if int(self.variables['Last_Day_Score']) < 0 else 1.05))
     
         
     def DtCreateSubmit(self, task_no, task):
@@ -208,13 +208,13 @@ class GRL_class:
         self.pull_status()
         
 
-    def get_to_do_list(self) :    return [(key, *val) for key, val in self.variables['to_do'].items()] 
+    def get_to_do_list(self) :    return self.variables['to_do'], self.variables['to_do_list']
     def get_to_do_done(self) :    return [(key, *val) for key, val in self.variables['to_do_completed'].items()][1:]
 
-    def TD_add(self, task) : 
+    def TD_add(self, task, parent = -1) : 
         self.db.add_log = []
-        self.db.add_log.append('TD_ADD;{};'.format(task))
-        self.db.add_to_do(task)
+        self.db.add_log.append('TD_ADD;{};{};'.format(task, parent))
+        self.db.add_to_do(task, parent)
         self.db.commit()
         self.pull_status()
     
@@ -258,10 +258,10 @@ class GRL_class:
         self.db.commit()
         self.pull_status()
         
-    def TD_update(self, t_no, new_name) :
+    def TD_update(self, t_no, new_name, new_track) :
         self.db.add_log = []
-        self.db.add_log.append('TD_UPDATE;{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], new_name))
-        self.db.update_to_do(t_no, new_name)
+        self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], new_name, new_track))
+        self.db.update_to_do(t_no, new_name, new_track)
         self.db.commit()
         self.pull_status()
         

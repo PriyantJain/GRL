@@ -15,11 +15,13 @@ def add_routes(app, player) :
     ## Basic page rendering get API calls
     def loaded_home_page() :
         to_do_done = player.get_to_do_done()
-        to_do_done.sort(key = lambda x : x[2], reverse = True)
+        to_do_done.sort(key = lambda x : x[5], reverse = True)
         _today = datetime.datetime.strftime(datetime.date.today(), "%Y%m%d")
 
+        to_do, to_do_list = player.get_to_do_list()
+
         lim = 0
-        while lim < len(to_do_done) and to_do_done[lim][2] == _today : lim += 1
+        while lim < len(to_do_done) and to_do_done[lim][5] == _today : lim += 1
         lim = max(5, lim)
 
         variables = {'score' : player.score,
@@ -30,7 +32,8 @@ def add_routes(app, player) :
                      'DT1_done' : player.dt1_done,
                      'DT2_done' : player.dt2_done,
                      'DT3_done' : player.dt3_done,
-                     'to_do' : player.get_to_do_list(),
+                     'to_do' : to_do,
+                     'to_do_list' : to_do_list,
                      'to_do_done' : to_do_done[:lim],
                      'today_target' : player.today_target,
                      'recurring_tasks' : player.get_RT_list(),

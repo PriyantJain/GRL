@@ -1,5 +1,32 @@
 import {get_query} from './common_funtions.js';
 
+$(function() {
+
+    $(".progress").each(function() {
+  
+      var value = $(this).attr('data-value');
+      var left = $(this).find('.progress-left .progress-bar');
+      var right = $(this).find('.progress-right .progress-bar');
+  
+      if (value > 0) {
+        if (value <= 50) {
+          right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+        } else {
+          right.css('transform', 'rotate(180deg)')
+          left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+        }
+      }
+  
+    })
+  
+    function percentageToDegrees(percentage) {
+  
+      return percentage / 100 * 360
+  
+    }
+  
+});
+
 export function register_ET(taskName, taskPoints) {
     fetch('/GRL/register_ET', get_query('POST', {
         task_name: taskName,
@@ -13,6 +40,8 @@ export function register_ET(taskName, taskPoints) {
     })
     .catch(error => console.error(error));
 }
+
+
 
 export function register_standard_tasks(taskName, taskValue) {
     fetch('/GRL/register_Standard_Task', get_query('POST', {
@@ -29,8 +58,8 @@ export function register_standard_tasks(taskName, taskValue) {
 }
 
 document.getElementById('register_ET').addEventListener('click', function() {
-    const taskName = document.getElementById('ExtraTask').value;
-    const taskPoints = document.getElementById('ExtraTaskPoints').value;
+    const taskName = document.getElementById('ET_task_name').value;
+    const taskPoints = document.getElementById('ET_points_change').value;
     register_ET(taskName, taskPoints);
 });
 

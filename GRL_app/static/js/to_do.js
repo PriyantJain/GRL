@@ -1,8 +1,9 @@
 import {get_query} from './common_funtions.js';
 
-export function create_to_do(taskName){
+export function create_to_do(taskName, taskParent){
     fetch('/GRL/to_do', get_query('POST', {
-        task_name: taskName
+        task_name: taskName,
+        task_parent : taskParent
     }))
     .then(response => {
         if (!response.ok) {
@@ -14,10 +15,11 @@ export function create_to_do(taskName){
     .catch(error => console.error(error));
 }
 
-export function edit_to_do(taskNo, taskName){
+export function edit_to_do(taskNo, taskName, taskTrack){
     fetch(`/GRL/to_do/${taskNo}`, get_query('PUT', {
         task_no: taskNo,
-        task_name: taskName
+        task_name: taskName,
+        task_track: taskTrack
     }))
     .then(response => {
         if (!response.ok) {
@@ -69,7 +71,8 @@ export function TD_edit_button_handler(_id) {
     if (document.getElementsByName('TD_' + _id)[0].contentEditable == 'true') {
         let taskName = document.getElementsByName('TD_' + _id)[0].textContent;
         let taskNo = _id;
-        edit_to_do(taskNo, taskName);
+        let taskTrack = 0;
+        edit_to_do(taskNo, taskName, taskTrack);
     }
     else {
         document.getElementsByName('TD_' + _id)[0].contentEditable = true;
@@ -78,8 +81,9 @@ export function TD_edit_button_handler(_id) {
 
 
 document.getElementById('register_TD').addEventListener('click', function() {
+    const taskParent = document.getElementById('TD_parent').value;
     const taskName = document.getElementById('TD_task_name').value;
-    create_to_do(taskName);
+    create_to_do(taskName, taskParent);
 });
 
 // add click event listener to each button for editing to do

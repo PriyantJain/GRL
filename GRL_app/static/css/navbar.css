@@ -1,0 +1,16 @@
+.navbar {
+  margin-bottom: 20px;
+}
+
+.btn-sidebar {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, .65);
+  background-color: transparent;
+  border: 0;
+}
+
+.btn-sidebar:hover {
+  color: rgba(0, 0, 0, .85);
+  background-color: #d2f4ea;
+}

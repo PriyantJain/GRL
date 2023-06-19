@@ -6,6 +6,7 @@ import datetime
 from . import routes
 
 app = Flask(__name__)
+app.jinja_env.add_extension('jinja2.ext.loopcontrols')
 
 ## Calling GRL class 
 player = GRL_class() 

@@ -1,7 +1,6 @@
 flask-skeleton/
 __pycache__/
 .ipynb_checkpoints/
-Backups/
 GRL_app/model/__init__.py
 grlproject-credentials.json
 

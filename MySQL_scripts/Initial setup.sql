@@ -57,3 +57,20 @@
 -- INSERT INTO to_do_completed (Sr_No, Task_Name, Task_Points, Completion_Date)
 -- SELECT Sr_No, Task_Name, Task_Points, Completion_Date FROM to_do_tasks
 -- WHERE Completion_Date <> '-1';
+
+-- DELIMITER $$
+-- CREATE TRIGGER parent_default BEFORE INSERT ON TO_DO_LIST
+-- FOR EACH ROW
+
+-- BEGIN
+-- 	IF NEW.parent = -1 THEN SET NEW.parent = (SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'to_do_list');
+-- 	END IF;
+-- END;
+
+-- $$
+-- DELIMITER ;
+
+-- DROP TRIGGER parent_default;
+
+insert INTO to_do_list (Task_Name) values ('Del');
+

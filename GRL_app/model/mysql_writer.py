@@ -32,18 +32,22 @@ class BackendWriter:
 
     def toggle_dt(self, t_no, state) :  self.queries.append(f'''UPDATE STATS SET DT_{t_no}_completed = '{state}' WHERE Id = 1;''')
 
-    def add_to_do(self, task) : self.queries.append(f'''INSERT INTO TO_DO_TASKS(Task_Name, Completion_Date) VALUES('{task}', -1);''')
+    def add_to_do(self, task, parent = -1) : 
+        self.queries.append(f'''INSERT INTO TO_DO_LIST(Task_Name, Parent) VALUES('{task}', {parent});''')
 
     def complete_to_do(self, t_no, _today, points) :
-        self.queries.append(f'''UPDATE TO_DO_TASKS SET Completion_Date = '{_today}', Task_Points = '{points}' WHERE Sr_No = {t_no};''')
+        self.queries.append(f"""INSERT INTO TO_DO_COMPLETED (Sr_No, Task_Name, Track, Parent, Task_Points, Completion_Date) 
+                                SELECT Sr_No, Task_Name, Track, Parent, '{points}', '{_today}' FROM TO_DO_LIST WHERE Sr_No = {t_no};""")
+        self.queries.append(f"""DELETE FROM TO_DO_LIST WHERE Sr_No = {t_no};""")
 
     def undo_to_do(self, t_no) :
-        self.queries.append(f'''UPDATE TO_DO_TASKS SET Completion_Date = '-1' WHERE Sr_No = {t_no};''')
+        self.queries.append(f'''INSERT INTO TO_DO_LIST (Sr_No, Task_Name, Track, Parent) SELECT Sr_No, Task_Name, Track, Parent FROM TO_DO_COMPLETED WHERE Sr_No = {t_no};''')
+        self.queries.append(f'''DELETE FROM TO_DO_COMPLETED WHERE Sr_No = {t_no};''')
 
-    def delete_to_do(self, t_no) :    self.queries.append(f'''DELETE FROM TO_DO_TASKS WHERE Sr_No = {t_no};''')
+    def delete_to_do(self, t_no) :    self.queries.append(f'''DELETE FROM TO_DO_LIST WHERE Sr_No = {t_no};''')
 
-    def update_to_do(self, t_no, new_name) :
-        self.queries.append(f'''UPDATE TO_DO_TASKS SET Task_Name = '{new_name}' WHERE Sr_No = {t_no};''')
+    def update_to_do(self, t_no, new_name, new_track) :
+        self.queries.append(f'''UPDATE TO_DO_LIST SET Task_Name = '{new_name}', Track = '{new_track}' WHERE Sr_No = {t_no};''')
 
     def add_recurring_task(self, task, pts) :
         self.queries.append(f'''INSERT INTO RECURRING_TASKS(Task_Name, Last_Completion_Date, Task_Points) VALUES('{task}', '0', '{pts}');''')
@@ -85,14 +89,34 @@ class BackendWriter:
         col_names = tuple(desc[0] for desc in cursor.description)
         return (col_names, *cursor.fetchall())
 
+    # def get_tree_list(self, child_of, root) :
+    #     tree = [[root, min(1, len(child_of.get(root, [])))]]    # 1 means node has children
+    #     for child in child_of.get(root, []) :
+    #         tree.extend(self.get_tree_list(child_of, child))
+    #     return tree
+
     def pull_status(self, _today):
         variables = dict([])
 
-        for col, val in zip(*self.get_table_data('STATS')) :
-            variables[col] = val
+        for col, val in zip(*self.get_table_data('STATS')) :    variables[col] = val
 
-        variables['to_do'] = {row[0] : row[1:] for row in self.get_table_data('TO_DO_TASKS') if row[2] == '-1'}
-        variables['to_do_completed'] = {row[0] : row[1:] for row in self.get_table_data('TO_DO_TASKS') if row[2] != '-1'}
+        to_do_list = self.get_table_data('TO_DO_LIST')
+        child_of = dict([])
+        roots = []
+
+        for to_do in to_do_list :
+            if to_do[3] not in child_of.keys() : child_of[to_do[3]] = []
+            if to_do[3] == to_do[0] : 
+                roots.append(to_do[0])
+                continue
+            child_of[to_do[3]].append(to_do[0])
+
+        variables['to_do'] = {row[0] : row[1:] for row in to_do_list}
+        variables['to_do_list'] = []
+        # for root in roots : variables['to_do_list'].extend(self.get_tree_list(child_of, root))
+        for root in roots : variables['to_do_list'].append([root] + child_of[root])
+        
+        variables['to_do_completed'] = {row[0] : row[1:] for row in self.get_table_data('TO_DO_COMPLETED')}
 
         variables['RT'] = {row[0] : row[1:] for row in self.get_table_data('RECURRING_TASKS') if row[2] != _today}
         variables['RT_completed'] = {row[0] : row[1:] for row in self.get_table_data('RECURRING_TASKS') if row[2] == _today}
@@ -100,5 +124,5 @@ class BackendWriter:
         return variables
 
     def __del__(self):
-        print('Closing connection via del..')
+        print('Closing connection via __del__ ...')
         self.connection.close()

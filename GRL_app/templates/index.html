@@ -20,7 +20,7 @@
 
 <body>
     <!-- Page Wrapper -->
-    <div id = "page_wrapper" class="d-flex flex-row bg-light h-100">
+    <div id = "page_wrapper" class="d-flex flex-row bg-light">
         <!-- Sidebar (Copied from bootstrap example of sidebar + offcanvas) -->
         <div class="offcanvas offcanvas-start flex-column flex-shrink-0 p-3 bg-light" id = 'sidebar' style="width: 280px;">
             <a class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
@@ -89,211 +89,249 @@
                         <h7 class="my-3">{{membership}} class</h7><br/>
                     </div>
                 </div>
-
+                
                 <div class="d-flex flex-column">
                     <!-- Extra task -->
                     <div class = "d-flex flex-row input-group input-group mb-4 ms-4 shadow-sm bg-white rounded-pill p-1">
                         <span class = "input-group-text border border-0 bg-white rounded-pill" >Extra Task</span>
-                        <input type="text" class="form-control rounded-pill" placeholder="Task name" aria-label = "ET_task_name" id = "ET_task_name">
-                        <input type="text" class="form-control rounded-pill" placeholder="Points change" aria-label = "ET_points_change" id = "ET_points_change">
-                        <button class="btn btn-outline-secondary rounded-pill" type="button" id = "register_ET">Submit</button>
+                        <input type="text" class="form-control rounded-pill ms-1" placeholder="Task name" aria-label = "ET_task_name" id = "ET_task_name">
+                        <input type="text" class="form-control rounded-pill ms-1" placeholder="Points change" aria-label = "ET_points_change" id = "ET_points_change">
+                        <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "register_ET">Submit</button>
                     </div>
 
                     <!-- Standard Tasks -->
-                    <div class="col-xl-3 col-lg-6 mb-4">
-                        <div class="bg-white rounded-lg p-5 shadow">
-                            <h2 class="h6 font-weight-bold text-center mb-4">Overall progress</h2>
-                    
-                            <!-- Progress bar 1 -->
-                            <div class="progress mx-auto" data-value='80'>
-                            <span class="progress-left">
-                                <span class="progress-bar border-primary"></span>
-                            </span>
-                            <span class="progress-right">
-                                <span class="progress-bar border-primary"></span>
-                            </span>
-                            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-                            </div>
-                            </div>
-                            <!-- END -->
-                    
-                            <!-- Demo info -->
-                            <div class="row text-center mt-4">
-                            <div class="col-6 border-right">
-                                <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
-                            </div>
-                            <div class="col-6">
-                                <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
-                            </div>
-                            </div>
-                            <!-- END -->
+                    <div class = "d-flex flex-row input-group input-group mb-4 ms-4 shadow-sm bg-white rounded-pill p-1">
+                        <span class = "input-group-text border border-0 bg-white rounded-pill" >Standard Task</span>
+                        <select class = "form-select rounded-pill ms-1" id = "StandardTasks">
+                            <option selected> Select </option>
+                            <option value = "Walk"> Walk distance (steps)</option>
+                            <option value = "Learning"> Learning chunk (100 pt/unit)</option>
+                            <option value = "Brainpad"> Brainpad (100 pt/unit)</option>
+                        </select>
+                        <input type="text" class="form-control rounded-pill ms-1" aria-label = "Standard_points_change" id = "StandardTasksValue">
+                        <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "StandardTasksSubmit">Submit</button>
+                    </div>
+
+                    <!-- Create DT -->
+                    <div class = "d-flex flex-row input-group input-group mb-4 ms-4 shadow-sm bg-white rounded-pill p-1">
+                        <span class = "input-group-text border border-0 bg-white rounded-pill" >Create Daily Task</span>
+                        <select class = "form-select rounded-pill ms-1" id = "DT_task_no">
+                            <option selected> Select No. </option>
+                            <option value = "1"> 1 </option>
+                            <option value = "2"> 2 </option>
+                            <option value = "3"> 3 </option>
+                        </select>
+                        <input type="text" class="form-control rounded-pill ms-1" aria-label = "DT_task_name" id = "DT_task_name">
+                        <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "register_DT">Submit</button>
+                    </div>
+
+                    <!-- Daily Tasks -->
+                    <div class = 'd-flex flex-column card mb-4 ms-4 shadow-sm'>
+                        <div class="d-flex flex-row justify-content-center"><h4> Daily Tasks </h4></div>
+                        <ul class="list-group border-0">
+                            <li class="list-group-item">
+                              <input id = 'DT_B1' class="form-check-input me-1" type="checkbox" value="" aria-label="..." {{'checked' if DT1_done == 1}}>
+                              {{DT1}}
+                            </li>
+                            <li class="list-group-item">
+                              <input id = 'DT_B2' class="form-check-input me-1" type="checkbox" value="" aria-label="..." {{'checked' if DT2_done == 1}}>
+                              {{DT2}}
+                            </li>
+                            <li class="list-group-item">
+                              <input id = 'DT_B3' class="form-check-input me-1" type="checkbox" value="" aria-label="..." {{'checked' if DT3_done == 1}}>
+                              {{DT3}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TO DO -->
+            <div class = 'd-flex flex-row'>
+                <div class="d-flex flex-column col-6 bg-white ms-4 mb-4 p-1 shadow-sm rounded-lg">
+                    <div class="d-flex flex-row justify-content-between px-3 my-2">
+                        <h5>TO DO LIST</h5>
+                        <div class="d-flex flex-row">
+                            <button type="button" class="btn btn-outline-secondary rounded-pill ms-1" data-bs-toggle="modal" data-bs-target="#modal_new_TD" data-bs-parent="-1">
+                                <i class="fa fa-plus"></i>
+                            </button>
                         </div>
                     </div>
+                    {% for task in to_do_list %}
+                        {% if task|length == 1 %} 
+                            <div class="d-flex flex-row mt-2 px-3">
+                                <span class = 'col-8' name = 'TD_{{task[0]}}'>{{to_do[task[0]][0]}} </span>
+                                <span class = 'col-2' name = 'TD_track_{{task[0]}}'> fasttrack</span>
+                                <div class = 'col-2 d-flex flex-row justify-content-between'>
+                                    <button type = "button" name = "TD_completed" class = 'rounded' id = "TD_completed_btn" value = "{{task[0]}}">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <button type="button" class="rounded btn-primary" data-bs-toggle="modal" data-bs-target="#modal_new_TD" data-bs-parent="{{task[0]}}">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                    <button type = "button" name = "TD_del" class = 'rounded' id = 'TD_delete_btn' value="{{task[0]}}" > 
+                                        <i class='fa fa-trash'></i> 
+                                    </button>
+                                    <button type = "button" id = "TD_edit_btn" class = 'rounded' name = "TD_edit" value="{{task[0]}}">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="d-flex flex-row mt-2 px-3">
+                                <span class = 'col-8' name = 'TD_{{task[0]}}'>{{to_do[task[0]][0]}} </span>
+                                <span class = 'col-2' name = 'TD_track_{{task[0]}}'> fasttrack</span>
+                                <div class = 'col-2 d-flex flex-row justify-content-between'>
+                                    <button type = "button" class = 'rounded' name = 'TD_expand' data-bs-toggle="collapse" data-bs-target="#TD_region_{{task[0]}}" aria-controls="TD_region_{{task[0]}}">
+                                        <i class="fa-solid fa-list"></i>
+                                    </button>
+                                    <button type="button" class="rounded btn-primary" data-bs-toggle="modal" data-bs-target="#modal_new_TD" data-bs-parent="{{task[0]}}">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                    <button type = "button" id = "TD_edit_btn" class = 'rounded' name = "TD_edit" value="{{task[0]}}">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class = 'collapse' id = 'TD_region_{{task[0]}}'>
+                                {% for t in task %} 
+                                    {% if loop.first %} {% continue %} {% endif %}
+                                    <div class="d-flex flex-row mt-2 px-3">
+                                        <span class = 'col-8' name = 'TD_{{t}}'>{{to_do[t][0]}} </span>
+                                        <span class = 'col-2' name = 'TD_track_{{t}}'> fasttrack</span>
+                                        <div class = 'col-2 d-flex flex-row justify-content-between'>
+                                            <button type = "button" name = "TD_completed" class = 'rounded' id = "TD_completed_btn" value = "{{t}}">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button type = "button" name = "TD_del" class = 'rounded' id = 'TD_delete_btn' value="{{t}}">
+                                                <i class='fa fa-trash'></i> 
+                                            </button>
+                                            <button type = "button" id = "TD_edit_btn" class = 'rounded' name = "TD_edit" value="{{t}}">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Modal pop up for new to do entry -->
+            <div class="modal fade" id = "modal_new_TD" tabindex="-1" aria-labelledby="modal_new_TD_label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal_new_TD_label">Add new to do</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="Parent-name" class="col-form-label">Parent:</label>
+                                    <input type="text" class="form-control" id="TD_parent"></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="new-to-do" class="col-form-label">New to do:</label>
+                                    <input type="text" class="form-control" id = "TD_task_name"></input>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id = "register_TD">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed TO DO -->
+            <div class = 'd-flex flex-row'>
+                <div class="d-flex flex-column col-6 bg-white ms-4 mb-4 p-1 shadow-sm rounded-lg">
+                    <div class="d-flex flex-row justify-content-between px-3 my-2">
+                        <h5>TO DO COMPLETED</h5>
+                    </div>
+
+                    {% for task in to_do_done %}
+                    <div class="d-flex flex-row mt-2 px-3">
+                        <span class = 'col-11' name = 'TD_{{task[0]}}'>{{task[1]}} </span>
+                        <div class = 'col-1 d-flex flex-row justify-content-end'>
+                            <button type = "button" name = "TD_undo" class = 'rounded' id = "TD_undo_btn" value = "{{task[0]}}">
+                                <i class="fa fa-close"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Recurring Tasks -->
+            <div class = 'd-flex flex-row'>
+                <div class="d-flex flex-column col-6 bg-white ms-4 mb-4 p-1 shadow-sm rounded-lg">
+                    <div class="d-flex flex-row justify-content-between px-3 my-2">
+                        <h5>Recurring tasks</h5>
+                        <div class="d-flex flex-row">
+                            <input type="text" class="form-control rounded-pill ms-1" placeholder="New Task" aria-label = "RT_name" id = "RT_task_name">
+                            <input type="text" class="form-control rounded-pill ms-1" placeholder="Points" aria-label = "RT_points" id = "RT_task_points">
+                            <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "register_RT">Submit</button>
+                        </div>
+                    </div>
+
+                    {% for task in recurring_tasks %}
+                    <div class="d-flex flex-row mt-2 px-3">
+                        <span class = 'col-8' name = 'RT_task_{{task[0]}}'>{{task[1]}} </span>
+                        <span class = 'col-2' name = 'RT_points_{{task[0]}}'> {{task[3]}} </span>
+                        <div class = 'col-2 d-flex flex-row justify-content-between'>
+                            <button type = "button" name = "RT_completed" class = 'rounded' id = "RT_completed_btn" value = "{{task[0]}}">
+                                <i class="fa fa-check"></i>
+                            </button>
+                            <button type = "button" name = "RT_del" class = 'rounded' id = 'RT_delete_btn' value="{{task[0]}}" > 
+                                <i class='fa fa-trash'></i> 
+                            </button>
+                            <button type = "button" id = "RT_edit_btn" class = 'rounded' name = "RT_edit" value="{{task[0]}}">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Completed Recurring Tasks -->
+            <div class = 'd-flex flex-row'>
+                <div class="d-flex flex-column col-6 bg-white ms-4 mb-4 p-1 shadow-sm rounded-lg">
+                    <div class="d-flex flex-row justify-content-between px-3 my-2"><h5>Recurring Tasks COMPLETED</h5></div>
+
+                    {% for task in recurring_tasks_done %}
+                    <div class="d-flex flex-row mt-2 px-3">
+                        <span class = 'col-10'>{{task[1]}} </span>
+                        <span class = 'col-1'>{{task[3]}} </span>
+                        <div class = 'col-1 d-flex flex-row justify-content-end'>
+                            <button type = "button" name = "RT_undo" class = 'rounded' id = "RT_undo_btn" value = "{{task[0]}}">
+                                <i class="fa fa-close"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </body>
 
-<!-- <body>
-    Weak as of now, need to learn and implement more complicated stuff for better implementation <br>
-    <h1>Score : {{score}} / {{today_target}}<br>
-    Class  : {{membership}}
-    </h1>
-
-    <div> 
-        <label for="ExtraTask">Extra Task </label>
-        <input type="text" id = "ExtraTask" name = "ExtraTask" placeholder = "Task Details">
-        <input type="text" id = "ExtraTaskPoints" name = "ExtraTaskPoints" placeholder = "Points Change">
-        <button type="button" name = "ET" id = "register_ET"> Submit </button> 
-        <br/><br/>
-    </div>
-
-    <div> 
-        <label for = "StandardTasks"> StandardTasks </label>
-        <select name = "StandardTasks" id = "StandardTasks">
-            <option value = "Select"> Select </option>
-            <option value = "Walk"> Walk distance (steps)</option>
-            <option value = "Learning"> Learning chunk (100 pt/unit)</option>
-            <option value = "Brainpad"> Brainpad (100 pt/unit)</option>
-        </select>
-        <input type = "text" id = "StandardTasksValue" name = "StandardTasksValue">
-        <button type="button" name = "StandardTasksSubmit" id = "StandardTasksSubmit"> Submit </button> 
-        <br/><br/>
-    </div>
-
-    <div> 
-        <label for = "DT_create"> Create Daily Task </label>
-        <select name = "DT_create" id = "DT_task_no">
-            <option value = "Select"> Select no. </option>
-            <option value = "1"> 1 </option>
-            <option value = "2"> 2 </option>
-            <option value = "3"> 3 </option>
-        </select>
-        <input type = "text" id = "DT_task_name" name = "DT_create_task">
-        <button type="button" name = "DT_create_submit" id = 'register_DT'> Submit </button> 
-        <br/><br/>
-    </div>
-
-    <div> 
-        {% if DT1_done == 1 %}
-            <button type = "button" name = "DT_B1" id = "DT_B1" style = "background-color : green"> {{DT1}} </button> <br>
-        {% else %}
-            <button type = "button" name = "DT_B1" id = "DT_B1"> {{DT1}} </button> <br>
-        {% endif %}
-        
-        {% if DT2_done == 1 %}
-            <button type = "button" name = "DT_B2" id = "DT_B2" style = "background-color : green"> {{DT2}} </button> <br>
-        {% else %}
-            <button type = "button" name = "DT_B2" id = "DT_B2"> {{DT2}} </button> <br>
-        {% endif %}
-
-        {% if DT3_done == 1 %}
-            <button type = "button" name = "DT_B3" id = "DT_B3" style = "background-color : green"> {{DT3}} </button> <br>
-        {% else %}
-            <button type = "button" name = "DT_B3" id = "DT_B3"> {{DT3}} </button> <br>
-        {% endif %}
-    </div>
-
-    <h1> TO DO list </h1>
-
-    <div> 
-        <label for = "TD_add"> Add new To Do </label>
-        <input type = "text" id = "TD_task_name" name = "TD_add" placeholder = "To Do Description"> -->
-        <!-- <select name = "TD_filter" id = "TD_filter">
-            <option value = "Select"> Select filter </option>
-            <option value = "ML Learning"> ML Learning </option>
-            <option value = "Acad"> Acad </option>
-            <option value = "Extra Learning"> Extra Learning </option>
-            <option value = "Personal"> Personal </option>
-            <option value = "GRL"> GRL </option>
-            <option value = "Projects"> Projects </option>
-            <option value = "Others"> Others </option>
-        </select> --> <!--
-        <button type = "button" name = "TD_add" id = "register_TD"> Submit </button> <br/><br/>
-    </div>
-
-    <div>
-        <table>
-            {% for task in to_do %}
-            <tr>
-                <td> <span name = 'TD_{{task[0]}}'>{{task[1]}} </span> </td>
-                <td> <span name = 'TD_filter_{{task[0]}}'>{{task[4]}} </span> </td>
-                <td> <button type = "button" name = "TD_completed" id = "TD_completed_btn" value = "{{task[0]}}"> &#x2713;</button></td>
-                <td>
-                    <button type = "button" name = "TD_del" id = 'TD_delete_btn' value="{{task[0]}}" > 
-                        <i class='fa fa-trash'></i> 
-                    </button>
-                </td>
-                <td> 
-                    <button type = "button" id = "TD_edit_btn" name = "TD_edit" value="{{task[0]}}">
-                        <i class="fa fa-pencil"></i>
-                    </button>
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
-
-        <h1> Completed TO DO </h1>
-        <table>
-            {% for task in to_do_done %}
-            <tr>
-                <td>{{task[1]}}</td>
-                <td><button type = "button" name = "TD_undo" id = "TD_undo_btn" value = "{{task[0]}}"> &#x2717;</button></td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-
-    
-    <h1> Recurring tasks </h1>
-    <div> 
-        <label for = "RT_add"> Add new recurring task </label>
-        <input type = "text" id = "RT_task_name" name = "RT_add_task" placeholder = "Reccuring Task Description">
-        <input type = "text" id = "RT_task_points" name = "RT_add_points" placeholder = "Reccuring Task Points">
-        <button type = "button" name = "RT_add" id = "register_RT"> Submit </button> <br/><br/>
-    </div>
-
-    <div> 
-        <table>
-            {% for task in recurring_tasks %}
-                <tr>
-                    <td><span name = 'RT_task_{{task[0]}}'>{{task[1]}} </span></td>
-                    <td><span name = 'RT_points_{{task[0]}}'>{{task[3]}} </span></td>
-                    <td><button type = "button" name = "RT_completed" id = "RT_completed_btn" value = "{{task[0]}}"> &#x2713;</button></td>
-                    <td>
-                        <button type = "button" name = "RT_del" id = "RT_delete_btn" value="{{task[0]}}"> 
-                            <i class='fa fa-trash'></i> 
-                        </button>
-                    </td>
-                    <td> 
-                        <button type = "button" name = "RT_edit_{{task[0]}}" id = "RT_edit_btn" value = '{{task[0]}}'>
-                            <i class="fa fa-pencil"></i>
-                        </button>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-
-        <h1> completed recurring tasks </h1>
-        <table>
-        {% for task in recurring_tasks_done %}
-            <tr>
-                <td>{{task[1]}}</td>
-                <td>{{task[3]}}</td>
-                <td><button type = "button" name = "RT_undo" id = "RT_undo_btn" value = "{{task[0]}}"> &#x2717;</button></td>
-            </tr>
-        {% endfor %}
-        </table>
-    </div>
-</body> -->
-
-<!-- <style>
-    table, td {
-        border: 1px solid black;
-    }
-</style> -->
-
 <!-- including my logic scripts via main.js -->
 <script type="module" src="{{url_for('static', filename = 'main.js')}}"></script>
+<script>
+    const modal_new_TD = document.getElementById('modal_new_TD')
+    modal_new_TD.addEventListener('show.bs.modal', event => {
+        // Button that triggered the modal
+        const button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        const parent = button.getAttribute('data-bs-parent')
+        // Update the modal's content.
+        const modalBodyInputParent = modal_new_TD.querySelector('#TD_parent')
+
+        modalBodyInputParent.value = parent
+    })
+</script>

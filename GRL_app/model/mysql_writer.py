@@ -32,8 +32,14 @@ class BackendWriter:
 
     def toggle_dt(self, t_no, state) :  self.queries.append(f'''UPDATE STATS SET DT_{t_no}_completed = '{state}' WHERE Id = 1;''')
 
-    def add_to_do(self, task, parent = -1) : 
+    def add_to_do(self, task, parent = '-1') : 
         self.queries.append(f'''INSERT INTO TO_DO_LIST(Task_Name, Parent) VALUES('{task}', {parent});''')
+        if parent == '-1' :
+            self.queries.append(f'''WITH TEMPTB AS (SELECT MAX(Sr_No) FROM TO_DO_LIST)
+                                    UPDATE TO_DO_LIST
+                                    SET Parent = (SELECT * FROM TEMPTB)
+                                    WHERE Sr_No = (SELECT * FROM TEMPTB);
+                                ''')
 
     def complete_to_do(self, t_no, _today, points) :
         self.queries.append(f"""INSERT INTO TO_DO_COMPLETED (Sr_No, Task_Name, Track, Parent, Task_Points, Completion_Date) 

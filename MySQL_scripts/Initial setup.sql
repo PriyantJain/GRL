@@ -72,5 +72,11 @@
 
 -- DROP TRIGGER parent_default;
 
+WITH TEMPTB AS (SELECT MAX(Sr_No) FROM TO_DO_LIST)
+UPDATE TO_DO_LIST
+SET Parent = (SELECT * FROM TEMPTB)
+WHERE Sr_No = (SELECT * FROM TEMPTB);
+
+
 insert INTO to_do_list (Task_Name) values ('Del');
 

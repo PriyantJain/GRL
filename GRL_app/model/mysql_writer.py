@@ -36,10 +36,9 @@ class BackendWriter:
         
         self.queries.append(f'''INSERT INTO TO_DO_LIST(Task_Name, Parent) VALUES('{task}', {parent});''')
         if parent == '-1' :
-            self.queries.append('''WITH TEMPTB AS (SELECT MAX(Sr_No) FROM TO_DO_LIST)
-                                    UPDATE TO_DO_LIST
-                                    SET Parent = (SELECT * FROM TEMPTB)
-                                    WHERE Sr_No = (SELECT * FROM TEMPTB);
+            self.queries.append('''UPDATE TO_DO_LIST
+                                    SET Parent = (SELECT * FROM (SELECT MAX(Sr_No) FROM TO_DO_LIST) TEMPTB )
+                                    WHERE Sr_No = (SELECT * FROM (SELECT MAX(Sr_No) FROM TO_DO_LIST) TEMPTB1 );
                                 ''')
 
     def complete_to_do(self, t_no, _today, points) :

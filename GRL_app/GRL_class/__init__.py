@@ -36,14 +36,14 @@ class GRL_class:
         self.db.delete_daily_task('Add Daily Task')
 
         if self.dt1_done == 0 and self.dt1 != 'Add Daily Task': 
-            self.db.add_log.append('TD_ADD;{};'.format(self.dt1))
-            self.db.add_to_do(self.dt1)
+            self.db.add_log.append('TD_ADD;{};-1;'.format(self.dt1))
+            self.db.add_to_do(self.dt1, '-1')
         if self.dt2_done == 0 and self.dt2 != 'Add Daily Task' : 
-            self.db.add_log.append('TD_ADD;{};'.format(self.dt2))
-            self.db.add_to_do(self.dt2)
+            self.db.add_log.append('TD_ADD;{};-1;'.format(self.dt2))
+            self.db.add_to_do(self.dt2, '-1')
         if self.dt3_done == 0 and self.dt3 != 'Add Daily Task' : 
-            self.db.add_log.append('TD_ADD;{};'.format(self.dt3))
-            self.db.add_to_do(self.dt3)
+            self.db.add_log.append('TD_ADD;{};-1;'.format(self.dt3))
+            self.db.add_to_do(self.dt3, '-1')
 
         self.db.add_log.append('LAST SCORE;' + str(last_score))
         self.db.update_last_day_score(last_score)
@@ -211,7 +211,7 @@ class GRL_class:
     def get_to_do_list(self) :    return self.variables['to_do'], self.variables['to_do_list']
     def get_to_do_done(self) :    return [(key, *val) for key, val in self.variables['to_do_completed'].items()][1:]
 
-    def TD_add(self, task, parent = -1) : 
+    def TD_add(self, task, parent = '-1') : 
         self.db.add_log = []
         self.db.add_log.append('TD_ADD;{};{};'.format(task, parent))
         self.db.add_to_do(task, parent)

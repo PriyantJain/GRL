@@ -70,7 +70,7 @@ class BackendWriter:
         self.queries.append(f'''UPDATE RECURRING_TASKS SET Task_Name = '{new_name}', Task_Points = '{new_pts}' WHERE Sr_No = {t_no};''')
 
     def commit(self) :
-        if len(self.add_log) == 0 : return       # if there's no log to push, return
+        if len(self.add_log) == 0 : return       # if there's no change to push, return
 
         self.check_connection()
         self.connection.begin()
@@ -95,21 +95,17 @@ class BackendWriter:
         col_names = tuple(desc[0] for desc in cursor.description)
         return (col_names, *cursor.fetchall())
 
-    # def get_tree_list(self, child_of, root) :
-    #     tree = [[root, min(1, len(child_of.get(root, [])))]]    # 1 means node has children
-    #     for child in child_of.get(root, []) :
-    #         tree.extend(self.get_tree_list(child_of, child))
-    #     return tree
-
     def pull_status(self, _today):
         variables = dict([])
 
+        # Reading STATS table from database
         for col, val in zip(*self.get_table_data('STATS')) :    variables[col] = val
 
         to_do_list = self.get_table_data('TO_DO_LIST')
         child_of = dict([])
         roots = []
 
+        # Creating 'to_do_list' which maps parent and children and 'to_do' dict which contains details of all todo
         for to_do in to_do_list :
             if to_do[3] not in child_of.keys() : child_of[to_do[3]] = []
             if to_do[3] == to_do[0] : 
@@ -117,11 +113,18 @@ class BackendWriter:
                 continue
             child_of[to_do[3]].append(to_do[0])
 
-        variables['to_do'] = {row[0] : row[1:] for row in to_do_list}
-        variables['to_do_list'] = []
-        # for root in roots : variables['to_do_list'].extend(self.get_tree_list(child_of, root))
-        for root in roots : variables['to_do_list'].append([root] + child_of[root])
+        variables['to_do'] = {row[0] : list(row[1:]) for row in to_do_list}
         
+        variables['to_do_list'] = []
+        for root in roots : variables['to_do_list'].append([root] + child_of[root])
+
+        # Setting track of parents based on their children
+        for parent, *children in variables['to_do_list'] :
+            if len(children) != 0 :
+                variables['to_do'][parent][1] = 0
+                for child in children : 
+                    if variables['to_do'][child][1] == 1 : variables['to_do'][parent][1] = 1
+
         variables['to_do_completed'] = {row[0] : row[1:] for row in self.get_table_data('TO_DO_COMPLETED')}
 
         variables['RT'] = {row[0] : row[1:] for row in self.get_table_data('RECURRING_TASKS') if row[2] != _today}
@@ -130,5 +133,6 @@ class BackendWriter:
         return variables
 
     def __del__(self):
+        '''Closes database connection when object is destroyed'''
         print('Closing connection via __del__ ...')
         self.connection.close()

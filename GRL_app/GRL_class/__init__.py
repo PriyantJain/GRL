@@ -258,10 +258,24 @@ class GRL_class:
         self.db.commit()
         self.pull_status()
         
-    def TD_update(self, t_no, new_name, new_track) :
+    def TD_update_name(self, t_no, new_name) :
         self.db.add_log = []
-        self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], new_name, new_track))
+        self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], 'name', new_name))
+        new_track = self.variables['to_do'][t_no][1]
         self.db.update_to_do(t_no, new_name, new_track)
+        self.db.commit()
+        self.pull_status()
+
+    def TD_update_track(self, t_no, new_track) :
+        self.db.add_log = []
+        self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], 'track', new_track))
+        new_name = self.variables['to_do'][t_no][0]
+        self.db.update_to_do(t_no, new_name, new_track)
+        # if self.variables['to_do'][t_no][2] != t_no:
+        #     t_par_no = self.variables['to_do'][t_no][2]
+        #     self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_par_no, self.variables['to_do'][t_par_no][0], 'track', new_track))
+        #     new_name = self.variables['to_do'][t_par_no][0]
+        #     self.db.update_to_do(t_par_no, new_name, new_track)
         self.db.commit()
         self.pull_status()
         

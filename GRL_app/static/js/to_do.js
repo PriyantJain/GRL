@@ -15,10 +15,26 @@ export function create_to_do(taskName, taskParent){
     .catch(error => console.error(error));
 }
 
-export function edit_to_do(taskNo, taskName, taskTrack){
-    fetch(`/GRL/to_do/${taskNo}`, get_query('PUT', {
+export function edit_to_do_name(taskNo, taskName){
+    fetch(`/GRL/to_do/${taskNo}/name`, get_query('PUT', {
         task_no: taskNo,
         task_name: taskName,
+        // task_track: taskTrack
+    }))
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('PUT request for edit_to_do failed');
+        }
+        if (window.location.href.endsWith('/GRL')) window.location.reload();
+        else window.location.href = window.location.href + 'GRL';
+    })
+    .catch(error => console.error(error));
+}
+
+export function edit_to_do_track(taskNo, taskTrack){
+    fetch(`/GRL/to_do/${taskNo}/track`, get_query('PUT', {
+        task_no: taskNo,
+        // task_name: taskName,
         task_track: taskTrack
     }))
     .then(response => {
@@ -67,12 +83,13 @@ export function delete_to_do(taskNo){
     .catch(error => console.error(error));
 }
 
+// function for handling edit button in To Do
 export function TD_edit_button_handler(_id) {
     if (document.getElementsByName('TD_' + _id)[0].contentEditable == 'true') {
         let taskName = document.getElementsByName('TD_' + _id)[0].textContent;
         let taskNo = _id;
-        let taskTrack = 0;
-        edit_to_do(taskNo, taskName, taskTrack);
+        // let taskTrack = parseInt(document.getElementsByName('TD_track_' + _id)[0].getAttribute('value'));
+        edit_to_do_name(taskNo, taskName);
     }
     else {
         document.getElementsByName('TD_' + _id)[0].contentEditable = true;
@@ -128,3 +145,28 @@ delete_buttons_TD.forEach(button => {
     });   
 });
 
+// helper for filling parent cell in modal pop up in TO DO  
+const modal_new_TD = document.getElementById('modal_new_TD')
+modal_new_TD.addEventListener('show.bs.modal', event => {
+    // Button that triggered the modal
+    const button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    const parent = button.getAttribute('data-bs-parent')
+    // Update the modal's content.
+    const modalBodyInputParent = modal_new_TD.querySelector('#TD_parent')
+
+    modalBodyInputParent.value = parent
+})
+
+// add click event listener to fasttrack buttons in to do
+const fasttrack_buttons = document.querySelectorAll('#fasttrack');
+fasttrack_buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        const button_name = button.getAttribute("name");
+        const _id = parseInt(button_name.split('_')[2]);
+        // const taskName = document.getElementsByName('TD_' + _id)[0].textContent;
+        const taskTrack = parseInt(button.getAttribute('value'));
+
+        edit_to_do_track(_id, 1 - taskTrack);
+    });   
+});

@@ -26,12 +26,22 @@ def add_routes(app, player):
         response = {'status': 'success'}
         return flask.jsonify(response), 201
     
-    @app.route('/GRL/to_do/<int:task_id>', methods=['PUT'])
-    def edit_to_do(task_id) :
+    @app.route('/GRL/to_do/<int:task_id>/name', methods=['PUT'])
+    def edit_to_do_name(task_id) :
         task_name = flask.request.json.get('task_name')
+        # task_track = flask.request.json.get('task_track')
+        
+        player.TD_update_name(task_id, task_name)
+        
+        response = {'status': 'success'}
+        return flask.jsonify(response)
+
+    @app.route('/GRL/to_do/<int:task_id>/track', methods=['PUT'])
+    def edit_to_do_track(task_id) :
+        # task_name = flask.request.json.get('task_name')
         task_track = flask.request.json.get('task_track')
         
-        player.TD_update(task_id, task_name, task_track)
+        player.TD_update_track(task_id, task_track)
         
         response = {'status': 'success'}
         return flask.jsonify(response)

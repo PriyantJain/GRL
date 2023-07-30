@@ -55,7 +55,7 @@
         
         <!-- Main Page -->
         <div class = 'd-flex flex-column flex-grow-1' id = 'main_page'>
-            <!-- Navbar -->
+            <!-- Top Navbar -->
             <nav class="navbar navbar-expand navbar-light bg-white">
                 <div class="container-fluid">
                   <!-- Button not used will make navbar collapse if screen too small, need to change navbar-expand in nav tag-->
@@ -161,7 +161,9 @@
                         {% if task|length == 1 %} 
                             <div class="d-flex flex-row mt-2 px-3">
                                 <span class = 'col-8' name = 'TD_{{task[0]}}'>{{to_do[task[0]][0]}} </span>
-                                <span class = 'col-2' name = 'TD_track_{{task[0]}}'> fasttrack</span>
+                                <span class = 'col-2' id = 'fasttrack' name = 'TD_track_{{task[0]}}' value = '{{to_do[task[0]][1]}}' style="color:{{'red' if to_do[task[0]][1] == 1 else 'black'}};"> 
+                                    fasttrack
+                                </span>
                                 <div class = 'col-2 d-flex flex-row justify-content-between'>
                                     <button type = "button" name = "TD_completed" class = 'rounded' id = "TD_completed_btn" value = "{{task[0]}}">
                                         <i class="fa fa-check"></i>
@@ -180,7 +182,9 @@
                         {% else %}
                             <div class="d-flex flex-row mt-2 px-3">
                                 <span class = 'col-8' name = 'TD_{{task[0]}}'>{{to_do[task[0]][0]}} </span>
-                                <span class = 'col-2' name = 'TD_track_{{task[0]}}'> fasttrack</span>
+                                <span class = 'col-2' id = 'fasttrack' name = 'TD_track_{{task[0]}}' value = '{{to_do[task[0]][1]}}' style="color:{{'red' if to_do[task[0]][1] == 1 else 'black'}};"> 
+                                    fasttrack
+                                </span>
                                 <div class = 'col-2 d-flex flex-row justify-content-between'>
                                     <button type = "button" class = 'rounded' name = 'TD_expand' data-bs-toggle="collapse" data-bs-target="#TD_region_{{task[0]}}" aria-controls="TD_region_{{task[0]}}">
                                         <i class="fa-solid fa-list"></i>
@@ -198,7 +202,9 @@
                                     {% if loop.first %} {% continue %} {% endif %}
                                     <div class="d-flex flex-row mt-2 px-3">
                                         <span class = 'col-8' name = 'TD_{{t}}'>{{to_do[t][0]}} </span>
-                                        <span class = 'col-2' name = 'TD_track_{{t}}'> fasttrack</span>
+                                        <span class = 'col-2' id = 'fasttrack' name = 'TD_track_{{t}}' value = '{{to_do[t][1]}}' style="color:{{'red' if to_do[t][1] == 1 else 'black'}};">
+                                            fasttrack
+                                        </span>
                                         <div class = 'col-2 d-flex flex-row justify-content-between'>
                                             <button type = "button" name = "TD_completed" class = 'rounded' id = "TD_completed_btn" value = "{{t}}">
                                                 <i class="fa fa-check"></i>
@@ -322,16 +328,3 @@
 
 <!-- including my logic scripts via main.js -->
 <script type="module" src="{{url_for('static', filename = 'main.js')}}"></script>
-<script>
-    const modal_new_TD = document.getElementById('modal_new_TD')
-    modal_new_TD.addEventListener('show.bs.modal', event => {
-        // Button that triggered the modal
-        const button = event.relatedTarget
-        // Extract info from data-bs-* attributes
-        const parent = button.getAttribute('data-bs-parent')
-        // Update the modal's content.
-        const modalBodyInputParent = modal_new_TD.querySelector('#TD_parent')
-
-        modalBodyInputParent.value = parent
-    })
-</script>

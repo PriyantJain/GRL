@@ -1,58 +1,28 @@
 import {get_query} from './common_funtions.js';
 
-$(function() {
-
-    $(".progress").each(function() {
-  
-      var value = $(this).attr('data-value');
-      var left = $(this).find('.progress-left .progress-bar');
-      var right = $(this).find('.progress-right .progress-bar');
-  
-      if (value > 0) {
-        if (value <= 50) {
-          right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-        } else {
-          right.css('transform', 'rotate(180deg)')
-          left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-        }
-      }
-  
-    })
-  
-    function percentageToDegrees(percentage) {
-  
-      return percentage / 100 * 360
-  
-    }
-  
-});
-
+// Post call 'register_ET' API to register extra task with given name, points
 export function register_ET(taskName, taskPoints) {
-    fetch('/GRL/register_ET', get_query('POST', {
+    fetch('/register_ET', get_query('POST', {
         task_name: taskName,
         task_points: taskPoints
     }))
     .then(response => {
         if (!response.ok) throw new Error('POST request for register_ET failed');
-        
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
 
 
-
+// Post call 'register_Standard_Task' API to register standard task with given name, value
 export function register_standard_tasks(taskName, taskValue) {
-    fetch('/GRL/register_Standard_Task', get_query('POST', {
+    fetch('/register_Standard_Task', get_query('POST', {
         task_name: taskName,
         task_value: taskValue
     }))
     .then(response => {
         if (!response.ok) throw new Error('POST request for register_Standard_Task failed');
-
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }

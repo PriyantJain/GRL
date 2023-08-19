@@ -1,7 +1,7 @@
 import flask
 
 def add_routes(app, player):
-    @app.route('/GRL/register_ET', methods = ['POST'])
+    @app.route('/register_ET', methods = ['POST'])
     def register_ET() :
         task_name = flask.request.json.get('task_name')
         task_points = flask.request.json.get('task_points')
@@ -11,7 +11,7 @@ def add_routes(app, player):
         response = {'status': 'success'}
         return flask.jsonify(response)
 
-    @app.route('/GRL/register_Standard_Task', methods = ['POST'])
+    @app.route('/register_Standard_Task', methods = ['POST'])
     def register_Standard_Task() :
         task_name = flask.request.json.get('task_name')
         task_value = flask.request.json.get('task_value')

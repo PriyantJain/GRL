@@ -1,7 +1,8 @@
 import {get_query} from './common_funtions.js';
 
+// POST call to 'to_do' API to create new TO DO with given name, parent
 export function create_to_do(taskName, taskParent){
-    fetch('/GRL/to_do', get_query('POST', {
+    fetch('/to_do', get_query('POST', {
         task_name: taskName,
         task_parent : taskParent
     }))
@@ -9,76 +10,73 @@ export function create_to_do(taskName, taskParent){
         if (!response.ok) {
             throw new Error('POST request for create_to_do failed');
         }
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
 
+// PUT call to 'to_do/<taskNo>/name' API to edit TO DO name with given no
 export function edit_to_do_name(taskNo, taskName){
-    fetch(`/GRL/to_do/${taskNo}/name`, get_query('PUT', {
+    fetch(`/to_do/${taskNo}/name`, get_query('PUT', {
         task_no: taskNo,
         task_name: taskName,
-        // task_track: taskTrack
     }))
     .then(response => {
         if (!response.ok) {
             throw new Error('PUT request for edit_to_do failed');
         }
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
 
+// PUT call to 'to_do/<taskNo>/track' API to edit TO DO track with given no
 export function edit_to_do_track(taskNo, taskTrack){
-    fetch(`/GRL/to_do/${taskNo}/track`, get_query('PUT', {
+    fetch(`/to_do/${taskNo}/track`, get_query('PUT', {
         task_no: taskNo,
-        // task_name: taskName,
         task_track: taskTrack
     }))
     .then(response => {
         if (!response.ok) {
             throw new Error('PUT request for edit_to_do failed');
         }
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
 
+// PUT call to 'to_do/<taskNo>/complete' API to mark TO DO with given no as completed
 export function complete_to_do(taskNo){
-    fetch(`/GRL/to_do/${taskNo}/complete`, get_query('PUT'))
+    fetch(`/to_do/${taskNo}/complete`, get_query('PUT'))
     .then(response => {
         if (!response.ok) {
             throw new Error('PUT request for complete_to_do failed');
         }
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
 
+// PUT call to 'to_do/<taskNo>/undo' API to mark TO DO with given no as not completed
 export function undo_to_do(taskNo){
-    fetch(`/GRL/to_do/${taskNo}/undo`, get_query('PUT'))
+    fetch(`/to_do/${taskNo}/undo`, get_query('PUT'))
     .then(response => {
         if (!response.ok) {
             throw new Error('PUT request for undo_to_do failed');
         }
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
 
+// DELETE call to 'to_do/<taskNo>' API to delete TO DO with given no
 export function delete_to_do(taskNo){
-    fetch(`/GRL/to_do/${taskNo}`, get_query('DELETE'))
+    fetch(`/to_do/${taskNo}`, get_query('DELETE'))
     .then(response => {
         if (!response.ok) {
             throw new Error('DELETE request for delete_to_do failed');
         }
-        if (window.location.href.endsWith('/GRL')) window.location.reload();
-        else window.location.href = window.location.href + 'GRL';
+        window.location.reload();
     })
     .catch(error => console.error(error));
 }
@@ -96,7 +94,7 @@ export function TD_edit_button_handler(_id) {
     }
 }
 
-
+// Adds onclick function for 'create_to_do' popup's submit button
 document.getElementById('register_TD').addEventListener('click', function() {
     const taskParent = document.getElementById('TD_parent').value;
     const taskName = document.getElementById('TD_task_name').value;
@@ -105,7 +103,6 @@ document.getElementById('register_TD').addEventListener('click', function() {
 
 // add click event listener to each button for editing to do
 const edit_buttons_TD = document.querySelectorAll('#TD_edit_btn');
-
 edit_buttons_TD.forEach(button => {
     button.addEventListener('click', function() {
         const buttonNumber = parseInt(button.value);

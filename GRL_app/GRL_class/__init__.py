@@ -56,7 +56,7 @@ class GRL_class:
         
     
     @property
-    def score(self) :    return int(self.variables['Score'])
+    def score(self) :    return int(float(self.variables['Score']))
     
     @property
     def membership(self) :
@@ -224,10 +224,12 @@ class GRL_class:
         old_score = self.score
         new_score = self.score
         max_profit = {'S' : 1e15, 'A' : 1e12, 'B' : 1e9, 'C' : 1e6, 'D' : 1e3}
+        max_point = max_profit[self.membership]
+        min_point = int(max_point / 10)
         
         if (self.dt1_done + self.dt2_done + self.dt3_done) == 3 : 
-            new_score += int(random.triangular(50, max_profit[self.membership], 50))
-        else : new_score += 50
+            new_score += int(random.triangular(min_point, max_point, min_point))
+        else : new_score += min_point
             
         _today = datetime.datetime.strftime(datetime.date.today(), "%Y%m%d")
         self.db.add_log.append('TD_completed;{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], new_score - old_score))

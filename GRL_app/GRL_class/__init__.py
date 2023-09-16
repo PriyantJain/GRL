@@ -199,6 +199,9 @@ class GRL_class:
         elif task == 'Learning' or task == 'Brainpad': 
             self.db.add_log.append('{};{};'.format(task, value * 100))
             new_score = self.score + value * 100
+        elif task == 'Words' : 
+            self.db.add_log.append('{};{};'.format(task, value * 10))
+            new_score = self.score + value * 10
 
         
         self.db.add_log.append('UPDATE SCORE;' + str(old_score) + ';' + str(new_score))

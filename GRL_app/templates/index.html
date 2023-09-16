@@ -46,7 +46,7 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-dark rounded">Brainpad</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1o-4F1p0Fw04pb3eNgFqTTFEDtElHx0crlrpNKjseiLA/edit#gid=1581165906" class="link-dark rounded">Brainpad</a></li>
                     </ul>
                 </div>
                 </li>
@@ -85,7 +85,7 @@
                             class="shadow-sm rounded-circle img-fluid">
                         <h5 class="my-3">Priyant Jain</h5>
                         <h7 class="my-3">Current Score {{score}}</h7><br/>
-                        <h7 class="my-3">{{[today_target - score, 0]| max}} points to go</h7><br/>
+                        <h7 class="my-3">{{left_points}} points to go</h7><br/>
                         <h7 class="my-3">{{membership}} class</h7><br/>
                     </div>
                 </div>
@@ -107,6 +107,7 @@
                             <option value = "Walk"> Walk distance (steps)</option>
                             <option value = "Learning"> Learning chunk (100 pt/unit)</option>
                             <option value = "Brainpad"> Brainpad (100 pt/unit)</option>
+                            <option value = "Words"> Words left (10 pt/unit)</option> 
                         </select>
                         <input type="text" class="form-control rounded-pill ms-1" aria-label = "Standard_points_change" id = "StandardTasksValue">
                         <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "StandardTasksSubmit">Submit</button>
@@ -320,6 +321,19 @@
                         </div>
                     </div>
                     {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div class="modal fade" id="API_err_modal" tabindex="-1" aria-labelledby="API_err_modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <span class="modal-body" id="API_err_modal_msg"></span>
+                    <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
                 </div>
             </div>
         </div>

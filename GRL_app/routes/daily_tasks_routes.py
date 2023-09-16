@@ -19,3 +19,13 @@ def add_routes(app, player):
 
         response = {'status': 'success'}
         return flask.jsonify(response)
+
+    @app.route('/daily_task/<int:task_no>', methods = ['GET'])
+    def daily_task(task_no) :
+        ''' GET API call function for daily tasks with given task_no
+            Returns details of daily task : (name, completion status)'''
+        if task_no == 1 : return flask.jsonify((player.dt1, player.dt1_done))
+        elif task_no == 2 : return flask.jsonify((player.dt2, player.dt2_done))
+        elif task_no == 3 : return flask.jsonify((player.dt3, player.dt3_done))
+
+        return flask.jsonify('BAD PARAMETER'), 400

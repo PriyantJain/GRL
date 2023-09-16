@@ -2,6 +2,7 @@ from . import extra_standard_tasks_routes
 from . import daily_tasks_routes
 from . import to_do_routes
 from . import recurring_tasks_routes
+from . import basic_details_routes
 
 import datetime
 import flask
@@ -11,8 +12,9 @@ def add_routes(app, player) :
     daily_tasks_routes.add_routes(app, player)
     to_do_routes.add_routes(app, player)
     recurring_tasks_routes.add_routes(app, player)
+    basic_details_routes.add_routes(app, player)
     
-    ## Basic page rendering get API calls
+    ## Home page rendering function
     def loaded_home_page() :
         to_do_done = player.get_to_do_done()
         to_do_done.sort(key = lambda x : x[5], reverse = True)
@@ -36,16 +38,12 @@ def add_routes(app, player) :
                      'to_do_list' : to_do_list,
                      'to_do_done' : to_do_done[:lim],
                      'today_target' : player.today_target,
+                     'left_points' : max(player.today_target - player.score, 0),
                      'recurring_tasks' : player.get_RT_list(),
-                     'recurring_tasks_done' : player.get_RT_done(),
-                     'TD_edit_state' : False
+                     'recurring_tasks_done' : player.get_RT_done()
                     }
 
         return flask.render_template("index.html", **variables)
-
-    @app.route('/GRL', methods=['GET'])
-    def GRL_get():
-        return loaded_home_page()
 
     @app.route('/', methods = ['GET'])
     def home() : 

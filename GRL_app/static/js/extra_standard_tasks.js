@@ -1,4 +1,4 @@
-import {get_query} from './common_funtions.js';
+import {get_query, show_error_popup} from './common_funtions.js';
 
 // Post call 'register_ET' API to register extra task with given name, points
 export function register_ET(taskName, taskPoints) {
@@ -7,8 +7,13 @@ export function register_ET(taskName, taskPoints) {
         task_points: taskPoints
     }))
     .then(response => {
-        if (!response.ok) throw new Error('POST request for register_ET failed');
-        window.location.reload();
+        if (!response.ok) {
+            show_error_popup('POST request for register_ET failed');
+            throw new Error('POST request for register_ET failed');
+        }
+        else {
+            window.location.reload();
+        }
     })
     .catch(error => console.error(error));
 }

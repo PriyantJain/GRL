@@ -161,8 +161,8 @@
                     {% for task in to_do_list %}
                         {% if task|length == 1 %} 
                             <div class="d-flex flex-row mt-2 px-3">
-                                <span class = 'col-8' name = 'TD_{{task[0]}}'>{{to_do[task[0]][0]}} </span>
-                                <span class = 'col-2' id = 'fasttrack' name = 'TD_track_{{task[0]}}' value = '{{to_do[task[0]][1]}}' style="color:{{'red' if to_do[task[0]][1] == 1 else 'black'}};"> 
+                                <span class = 'col-8' name = 'TD_{{task[0]}}'> {{to_do[task[0]][0]}} </span>
+                                <span class = 'col-2' id = 'TD_fasttrack' name = 'TD_track_{{task[0]}}' value = '{{to_do[task[0]][1]}}' style="color:{{'red' if to_do[task[0]][1] == 1 else 'black'}};"> 
                                     fasttrack
                                 </span>
                                 <div class = 'col-2 d-flex flex-row justify-content-between'>
@@ -183,7 +183,7 @@
                         {% else %}
                             <div class="d-flex flex-row mt-2 px-3">
                                 <span class = 'col-8' name = 'TD_{{task[0]}}'>{{to_do[task[0]][0]}} </span>
-                                <span class = 'col-2' id = 'fasttrack' name = 'TD_track_{{task[0]}}' value = '{{to_do[task[0]][1]}}' style="color:{{'red' if to_do[task[0]][1] == 1 else 'black'}};"> 
+                                <span class = 'col-2' id = 'TD_fasttrack' name = 'TD_track_{{task[0]}}' value = '{{to_do[task[0]][1]}}' style="color:{{'red' if to_do[task[0]][1] == 1 else 'black'}};"> 
                                     fasttrack
                                 </span>
                                 <div class = 'col-2 d-flex flex-row justify-content-between'>
@@ -203,7 +203,7 @@
                                     {% if loop.first %} {% continue %} {% endif %}
                                     <div class="d-flex flex-row mt-2 px-3">
                                         <span class = 'col-8' name = 'TD_{{t}}'>{{to_do[t][0]}} </span>
-                                        <span class = 'col-2' id = 'fasttrack' name = 'TD_track_{{t}}' value = '{{to_do[t][1]}}' style="color:{{'red' if to_do[t][1] == 1 else 'black'}};">
+                                        <span class = 'col-2' id = 'TD_fasttrack' name = 'TD_track_{{t}}' value = '{{to_do[t][1]}}' style="color:{{'red' if to_do[t][1] == 1 else 'black'}};">
                                             fasttrack
                                         </span>
                                         <div class = 'col-2 d-flex flex-row justify-content-between'>
@@ -279,29 +279,101 @@
                     <div class="d-flex flex-row justify-content-between px-3 my-2">
                         <h5>Recurring tasks</h5>
                         <div class="d-flex flex-row">
-                            <input type="text" class="form-control rounded-pill ms-1" placeholder="New Task" aria-label = "RT_name" id = "RT_task_name">
-                            <input type="text" class="form-control rounded-pill ms-1" placeholder="Points" aria-label = "RT_points" id = "RT_task_points">
-                            <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "register_RT">Submit</button>
-                        </div>
-                    </div>
-
-                    {% for task in recurring_tasks %}
-                    <div class="d-flex flex-row mt-2 px-3">
-                        <span class = 'col-8' name = 'RT_task_{{task[0]}}'>{{task[1]}} </span>
-                        <span class = 'col-2' name = 'RT_points_{{task[0]}}'> {{task[3]}} </span>
-                        <div class = 'col-2 d-flex flex-row justify-content-between'>
-                            <button type = "button" name = "RT_completed" class = 'rounded' id = "RT_completed_btn" value = "{{task[0]}}">
-                                <i class="fa fa-check"></i>
-                            </button>
-                            <button type = "button" name = "RT_del" class = 'rounded' id = 'RT_delete_btn' value="{{task[0]}}" > 
-                                <i class='fa fa-trash'></i> 
-                            </button>
-                            <button type = "button" id = "RT_edit_btn" class = 'rounded' name = "RT_edit" value="{{task[0]}}">
-                                <i class="fa fa-pencil"></i>
+                            <button type="button" class="btn btn-outline-secondary rounded-pill ms-1" data-bs-toggle="modal" data-bs-target="#modal_new_RT" data-bs-parent="-1">
+                                <i class="fa fa-plus"></i>
                             </button>
                         </div>
                     </div>
+                    {% for task in RT_list %}
+                        {% if task|length == 1 %} 
+                            <div class="d-flex flex-row mt-2 px-3">
+                                <span class = 'col-8' name = 'RT_task_{{task[0]}}'>{{RT[task[0]][0]}} </span>
+                                <span class = 'col-2' name = 'RT_points_{{task[0]}}'> {{RT[task[0]][2]}} </span>
+                                <div class = 'col-2 d-flex flex-row justify-content-between'>
+                                    <button type = "button" name = "RT_completed" class = 'rounded' id = "RT_completed_btn" value = "{{task[0]}}">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <button type="button" class="rounded btn-primary" data-bs-toggle="modal" data-bs-target="#modal_new_RT" data-bs-parent="{{task[0]}}">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                    <button type = "button" name = "RT_del" class = 'rounded' id = 'RT_delete_btn' value="{{task[0]}}" > 
+                                        <i class='fa fa-trash'></i> 
+                                    </button>
+                                    <button type = "button" id = "RT_edit_btn" class = 'rounded' name = "RT_edit" value="{{task[0]}}">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="d-flex flex-row mt-2 px-3">
+                                <span class = 'col-8' name = 'RT_task_{{task[0]}}'>{{RT[task[0]][0]}} </span>
+                                <span class = 'col-2' name = 'RT_points_{{task[0]}}'> {{RT[task[0]][2]}} </span>
+                                <div class = 'col-2 d-flex flex-row justify-content-between'>
+                                    <button type = "button" class = 'rounded' name = 'RT_expand' data-bs-toggle="collapse" data-bs-target="#RT_region_{{task[0]}}" aria-controls="RT_region_{{task[0]}}">
+                                        <i class="fa-solid fa-list"></i>
+                                    </button>
+                                    <button type="button" class="rounded btn-primary" data-bs-toggle="modal" data-bs-target="#modal_new_RT" data-bs-parent="{{task[0]}}">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                    <button type = "button" id = "RT_edit_btn" class = 'rounded' name = "RT_edit" value="{{task[0]}}">
+                                        <i class="fa fa-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class = 'collapse' id = 'RT_region_{{task[0]}}'>
+                                {% for t in task %} 
+                                    {% if loop.first %} {% continue %} {% endif %}
+                                    <div class="d-flex flex-row mt-2 px-3">
+                                        <span class = 'col-8' name = 'RT_task_{{t}}'>{{RT[t][0]}} </span>
+                                        <span class = 'col-2' name = 'RT_points_{{t}}'> {{RT[t][2]}} </span>
+                                        <div class = 'col-2 d-flex flex-row justify-content-between'>
+                                            <button type = "button" name = "RT_completed" class = 'rounded' id = "RT_completed_btn" value = "{{t}}">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button type = "button" name = "RT_del" class = 'rounded' id = 'RT_delete_btn' value="{{t}}" > 
+                                                <i class='fa fa-trash'></i> 
+                                            </button>
+                                            <button type = "button" id = "RT_edit_btn" class = 'rounded' name = "RT_edit" value="{{t}}">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
                     {% endfor %}
+                </div>
+            </div>
+
+            <!-- Modal pop up for new RT entry -->
+            <div class="modal fade" id = "modal_new_RT" tabindex="-1" aria-labelledby="modal_new_RT_label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="modal_new_RT_label">Add new recurring task</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="Parent-name" class="col-form-label">Parent:</label>
+                                    <input type="text" class="form-control" id="RT_parent"></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="new-RT" class="col-form-label">New recurring task:</label>
+                                    <input type="text" class="form-control" id = "RT_task_name"></input>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="new-RT-points" class="col-form-label">Points:</label>
+                                    <input type="text" class="form-control" id = "RT_task_points"></input>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id = "register_RT">Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 

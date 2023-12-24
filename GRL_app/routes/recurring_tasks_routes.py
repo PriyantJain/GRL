@@ -11,19 +11,25 @@ def add_routes(app, player):
     def create_RT() :
         task_name = flask.request.json.get('task_name')
         task_points = flask.request.json.get('task_points')
-
-        player.RT_add(task_name, task_points)
+        task_parent = flask.request.json.get('task_parent')
+        
+        player.RT_add(task_name, task_points, task_parent)
         
         response = {'status': 'success'}
         return flask.jsonify(response), 201
     
-    @app.route('/RT/<int:task_id>', methods=['PUT'])
-    def edit_RT(task_id) :
+    @app.route('/RT/<int:task_id>/details', methods=['PUT'])
+    def edit_RT_details(task_id) :
         task_name = flask.request.json.get('task_name')
         task_points = flask.request.json.get('task_points')
-        
-        player.RT_update(task_id, task_name, task_points)
-        
+        player.RT_update_details(task_id, task_name, task_points)
+        response = {'status': 'success'}
+        return flask.jsonify(response)
+
+    @app.route('/RT/<int:task_id>/track', methods=['PUT'])
+    def edit_RT_track(task_id) :
+        task_track = flask.request.json.get('task_track')
+        player.RT_update_track(task_id, task_track)
         response = {'status': 'success'}
         return flask.jsonify(response)
 

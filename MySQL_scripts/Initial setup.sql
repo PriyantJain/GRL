@@ -80,3 +80,33 @@ WHERE Sr_No = (SELECT * FROM TEMPTB);
 
 insert INTO to_do_list (Task_Name) values ('Del');
 
+-- CREATE TABLE TO_DO_LIST (
+-- 	Sr_No int unique auto_increment,
+--     Task_Name varchar(511),
+--     Track int DEFAULT 0,
+--     Parent int
+-- );
+
+-- CREATE TABLE TO_DO_COMPLETED (
+-- 	Sr_No int unique auto_increment,
+--     Task_Name varchar(511),
+--     Track int DEFAULT 0,
+--     Parent int,
+--     Task_Points varchar(255),
+--     Completion_Date varchar(31)
+-- );
+
+-- CREATE TABLE RECURRING_TASKS (
+--     Sr_No int unique auto_increment,
+--     Task_Name varchar(511),
+--     Last_Completion_Date varchar(31),
+--     Task_Points varchar(255)
+-- );
+
+-- ALTER TABLE RECURRING_TASKS
+-- ADD Track int DEFAULT 0, 
+-- ADD Parent int;
+
+-- UPDATE RECURRING_TASKS 
+-- SET RECURRING_TASKS.Parent = RECURRING_TASKS.Sr_No
+-- WHERE RECURRING_TASKS.Sr_No > -1;

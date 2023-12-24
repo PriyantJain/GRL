@@ -112,7 +112,6 @@ edit_buttons_TD.forEach(button => {
 
 // add click event listener to each button for completing to do
 const completed_buttons_TD = document.querySelectorAll('#TD_completed_btn');
-
 completed_buttons_TD.forEach(button => {
     button.addEventListener('click', function() {
         const taskNo = parseInt(button.value);
@@ -122,7 +121,6 @@ completed_buttons_TD.forEach(button => {
 
 // add click event listener to each button for undo to do
 const undo_buttons_TD = document.querySelectorAll('#TD_undo_btn');
-
 undo_buttons_TD.forEach(button => {
     button.addEventListener('click', function() {
         const taskNo = parseInt(button.value);
@@ -132,7 +130,6 @@ undo_buttons_TD.forEach(button => {
 
 // add click event listener to each button for deleting to do
 const delete_buttons_TD = document.querySelectorAll('#TD_delete_btn');
-
 delete_buttons_TD.forEach(button => {
     button.addEventListener('click', function() {
         if (confirm('Really want to delete To Do?')){
@@ -156,12 +153,11 @@ modal_new_TD.addEventListener('show.bs.modal', event => {
 })
 
 // add click event listener to fasttrack buttons in to do
-const fasttrack_buttons = document.querySelectorAll('#fasttrack');
-fasttrack_buttons.forEach(button => {
+const fasttrack_buttons_TD = document.querySelectorAll('#TD_fasttrack');
+fasttrack_buttons_TD.forEach(button => {
     button.addEventListener('click', function() {
         const button_name = button.getAttribute("name");
         const _id = parseInt(button_name.split('_')[2]);
-        // const taskName = document.getElementsByName('TD_' + _id)[0].textContent;
         const taskTrack = parseInt(button.getAttribute('value'));
 
         edit_to_do_track(_id, 1 - taskTrack);

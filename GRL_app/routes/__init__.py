@@ -21,6 +21,7 @@ def add_routes(app, player) :
         _today = datetime.datetime.strftime(datetime.date.today(), "%Y%m%d")
 
         to_do, to_do_list = player.get_to_do_list()
+        RT, RT_list = player.get_RT_list()
 
         lim = 0
         while lim < len(to_do_done) and to_do_done[lim][5] == _today : lim += 1
@@ -39,7 +40,8 @@ def add_routes(app, player) :
                      'to_do_done' : to_do_done[:lim],
                      'today_target' : player.today_target,
                      'left_points' : max(player.today_target - player.score, 0),
-                     'recurring_tasks' : player.get_RT_list(),
+                     'RT' : RT,
+                     'RT_list' : RT_list,
                      'recurring_tasks_done' : player.get_RT_done()
                     }
 

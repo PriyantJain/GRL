@@ -276,23 +276,17 @@ class GRL_class:
         self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_no, self.variables['to_do'][t_no][0], 'track', new_track))
         new_name = self.variables['to_do'][t_no][0]
         self.db.update_to_do(t_no, new_name, new_track)
-        # if self.variables['to_do'][t_no][2] != t_no:
-        #     t_par_no = self.variables['to_do'][t_no][2]
-        #     self.db.add_log.append('TD_UPDATE;{};{};{};{};'.format(t_par_no, self.variables['to_do'][t_par_no][0], 'track', new_track))
-        #     new_name = self.variables['to_do'][t_par_no][0]
-        #     self.db.update_to_do(t_par_no, new_name, new_track)
         self.db.commit()
         self.pull_status()
-        
-        
+         
     
-    def get_RT_list(self) :    return [(key, *val) for key, val in self.variables['RT'].items()][1:]
+    def get_RT_list(self) :    return self.variables['RT'], self.variables['RT_list']
     def get_RT_done(self) :    return [(key, *val) for key, val in self.variables['RT_completed'].items()]
         
-    def RT_add(self, task, pts) : 
+    def RT_add(self, task, pts, parent = '-1') : 
         self.db.add_log = []
-        self.db.add_log.append('RT_ADD;{};{};'.format(task, pts))
-        self.db.add_recurring_task(task, pts)
+        self.db.add_log.append('RT_ADD;{};{};{};'.format(task, pts, parent))
+        self.db.add_recurring_task(task, pts, parent)
         self.db.commit()
         self.pull_status()
         
@@ -331,9 +325,19 @@ class GRL_class:
         self.db.commit()
         self.pull_status()
         
-    def RT_update(self, t_no, new_name, new_point) :
+    def RT_update_details(self, t_no, new_name, new_point) :
         self.db.add_log = []
-        self.db.add_log.append('RT_UPDATE;{};{};{};{};'.format(t_no, self.variables['RT'][t_no][0], new_name, new_point))
-        self.db.update_recurring_task(t_no, new_name, new_point)
+        self.db.add_log.append('RT_UPDATE;{};{};{};{};{};'.format(t_no, self.variables['RT'][t_no][0], 'details', new_name, new_point))
+        new_track = self.variables['RT'][t_no][3]
+        self.db.update_recurring_task(t_no, new_name, new_point, new_track)
+        self.db.commit()
+        self.pull_status()
+
+    def RT_update_track(self, t_no, new_track) :
+        self.db.add_log = []
+        self.db.add_log.append('RT_UPDATE;{};{};{};{};{};'.format(t_no, self.variables['RT'][t_no][0], 'track', new_track))
+        new_name = self.variables['RT'][t_no][0]
+        new_point = self.variables['RT'][t_no][2]
+        self.db.update_recurring_task(t_no, new_name, new_point, new_track)
         self.db.commit()
         self.pull_status()

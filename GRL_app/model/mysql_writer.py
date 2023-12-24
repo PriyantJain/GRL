@@ -8,7 +8,6 @@ class BackendWriter:
         self.password = password
         self.database = database
         self.connection = MySQLdb.connect(host=host, user=user, password=password, database=database)
-        self.tables = ['STATS', 'TO_DO_TASKS', 'RECURRING_TASKS', 'USER_LOGS']
         self.logs = []
         self.queries = []
 
@@ -33,7 +32,6 @@ class BackendWriter:
     def toggle_dt(self, t_no, state) :  self.queries.append(f'''UPDATE STATS SET DT_{t_no}_completed = '{state}' WHERE Id = 1;''')
 
     def add_to_do(self, task, parent = '-1') : 
-        
         self.queries.append(f'''INSERT INTO TO_DO_LIST(Task_Name, Parent) VALUES('{task}', {parent});''')
         if parent == '-1' :
             self.queries.append('''UPDATE TO_DO_LIST
@@ -55,8 +53,13 @@ class BackendWriter:
     def update_to_do(self, t_no, new_name, new_track) :
         self.queries.append(f'''UPDATE TO_DO_LIST SET Task_Name = '{new_name}', Track = '{new_track}' WHERE Sr_No = {t_no};''')
 
-    def add_recurring_task(self, task, pts) :
-        self.queries.append(f'''INSERT INTO RECURRING_TASKS(Task_Name, Last_Completion_Date, Task_Points) VALUES('{task}', '0', '{pts}');''')
+    def add_recurring_task(self, task, pts, parent = '-1') :
+        self.queries.append(f'''INSERT INTO RECURRING_TASKS(Task_Name, Last_Completion_Date, Task_Points, Parent) VALUES('{task}', '0', '{pts}', {parent});''')
+        if parent == '-1' :
+            self.queries.append('''UPDATE RECURRING_TASKS
+                                    SET Parent = (SELECT * FROM (SELECT MAX(Sr_No) FROM RECURRING_TASKS) TEMPTB )
+                                    WHERE Sr_No = (SELECT * FROM (SELECT MAX(Sr_No) FROM RECURRING_TASKS) TEMPTB1 );
+                                ''')
 
     def complete_recurring_task(self, t_no, _today) :
         self.queries.append(f'''UPDATE RECURRING_TASKS SET Last_Completion_Date = '{_today}' WHERE Sr_No = {t_no};''')
@@ -66,8 +69,8 @@ class BackendWriter:
 
     def delete_recurring_task(self, t_no) :    self.queries.append(f'''DELETE FROM RECURRING_TASKS WHERE Sr_No = {t_no};''')
 
-    def update_recurring_task(self, t_no, new_name, new_pts) :
-        self.queries.append(f'''UPDATE RECURRING_TASKS SET Task_Name = '{new_name}', Task_Points = '{new_pts}' WHERE Sr_No = {t_no};''')
+    def update_recurring_task(self, t_no, new_name, new_pts, new_track) :
+        self.queries.append(f'''UPDATE RECURRING_TASKS SET Task_Name = '{new_name}', Task_Points = '{new_pts}', Track = '{new_track}' WHERE Sr_No = {t_no};''')
 
     def commit(self) :
         if len(self.add_log) == 0 : return       # if there's no change to push, return
@@ -87,7 +90,6 @@ class BackendWriter:
             self.connection.rollback()
             raise
 
-
     def get_table_data(self, table_name) :
         self.check_connection()
         cursor = self.connection.cursor()
@@ -102,21 +104,21 @@ class BackendWriter:
         for col, val in zip(*self.get_table_data('STATS')) :    variables[col] = val
 
         to_do_list = self.get_table_data('TO_DO_LIST')
-        child_of = dict([])
-        roots = []
+        child_of_TD = dict([])
+        roots_TD = []
 
         # Creating 'to_do_list' which maps parent and children and 'to_do' dict which contains details of all todo
         for to_do in to_do_list :
-            if to_do[3] not in child_of.keys() : child_of[to_do[3]] = []
+            if to_do[3] not in child_of_TD.keys() : child_of_TD[to_do[3]] = []
             if to_do[3] == to_do[0] : 
-                roots.append(to_do[0])
+                roots_TD.append(to_do[0])
                 continue
-            child_of[to_do[3]].append(to_do[0])
+            child_of_TD[to_do[3]].append(to_do[0])
 
         variables['to_do'] = {row[0] : list(row[1:]) for row in to_do_list}
         
         variables['to_do_list'] = []
-        for root in roots : variables['to_do_list'].append([root] + child_of[root])
+        for root in roots_TD : variables['to_do_list'].append([root] + child_of_TD[root])
 
         # Setting track of parents based on their children
         for parent, *children in variables['to_do_list'] :
@@ -127,7 +129,29 @@ class BackendWriter:
 
         variables['to_do_completed'] = {row[0] : row[1:] for row in self.get_table_data('TO_DO_COMPLETED')}
 
-        variables['RT'] = {row[0] : row[1:] for row in self.get_table_data('RECURRING_TASKS') if row[2] != _today}
+        # variables['RT']
+        RT_list = [row for row in self.get_table_data('RECURRING_TASKS') if row[2] != _today]
+        child_of_RT = dict([])
+        roots_RT = []
+
+        # Creating 'RT_list' which maps parent and children and 'RT' dict which contains details of all recurring tasks
+        for RT in RT_list :
+            if RT[5] not in child_of_RT.keys() : child_of_RT[RT[5]] = []
+            if RT[5] == RT[0] :    roots_RT.append(RT[0])
+            else : child_of_RT[RT[5]].append(RT[0])
+
+        variables['RT'] = {row[0] : list(row[1:]) for row in RT_list}
+        
+        variables['RT_list'] = []
+        for root in roots_RT : variables['RT_list'].append([root] + child_of_RT[root])
+
+        # Setting track of parents based on their children
+        for parent, *children in variables['RT_list'] :
+            if len(children) != 0 :
+                variables['RT'][parent][1] = 0
+                for child in children : 
+                    if variables['RT'][child][1] == 1 : variables['RT'][parent][1] = 1
+                    
         variables['RT_completed'] = {row[0] : row[1:] for row in self.get_table_data('RECURRING_TASKS') if row[2] == _today}
 
         return variables

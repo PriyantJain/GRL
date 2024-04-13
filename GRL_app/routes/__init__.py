@@ -3,6 +3,7 @@ from . import daily_tasks_routes
 from . import to_do_routes
 from . import recurring_tasks_routes
 from . import basic_details_routes
+from . import vouchers_routes
 
 import datetime
 import flask
@@ -13,6 +14,8 @@ def add_routes(app, player) :
     to_do_routes.add_routes(app, player)
     recurring_tasks_routes.add_routes(app, player)
     basic_details_routes.add_routes(app, player)
+    vouchers_routes.add_routes(app, player)
+
     
     ## Home page rendering function
     def loaded_home_page() :
@@ -55,3 +58,13 @@ def add_routes(app, player) :
         return loaded_home_page()
         
     
+    def loaded_shop_page() :
+        variables = {'Vouchers' : player.get_vouchers()
+                    }
+        return flask.render_template("Shop.html", **variables)
+    
+    @app.route('/shop', methods = ['GET'])
+    def shop() :
+        player.pull_status()
+
+        return loaded_shop_page()

@@ -73,12 +73,12 @@
 -- DROP TRIGGER parent_default;
 
 WITH TEMPTB AS (SELECT MAX(Sr_No) FROM TO_DO_LIST)
-UPDATE TO_DO_LIST
+UPDATE TO_DO_Linsert INTO to_do_list (Task_Name) values ('Del');IST
 SET Parent = (SELECT * FROM TEMPTB)
 WHERE Sr_No = (SELECT * FROM TEMPTB);
 
 
-insert INTO to_do_list (Task_Name) values ('Del');
+
 
 -- CREATE TABLE TO_DO_LIST (
 -- 	Sr_No int unique auto_increment,
@@ -103,6 +103,14 @@ insert INTO to_do_list (Task_Name) values ('Del');
 --     Task_Points varchar(255)
 -- );
 
+-- CREATE TABLE VOUCHERS (
+--     Sr_No int unique auto_increment,
+--     V_name varchar(511),
+--     Quantity int DEFAULT 0,
+--     Price int
+-- );
+
+
 -- ALTER TABLE RECURRING_TASKS
 -- ADD Track int DEFAULT 0, 
 -- ADD Parent int;
@@ -110,3 +118,5 @@ insert INTO to_do_list (Task_Name) values ('Del');
 -- UPDATE RECURRING_TASKS 
 -- SET RECURRING_TASKS.Parent = RECURRING_TASKS.Sr_No
 -- WHERE RECURRING_TASKS.Sr_No > -1;
+
+SHOW TRIGGERS

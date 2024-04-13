@@ -15,6 +15,10 @@ class BackendWriter:
         if self.connection.open == 1 : self.connection.close()
         self.connection = MySQLdb.connect(host=host, user=user, password=password, database=database)
 
+    def begin(self) :
+        self.add_log = []
+        self.queries = []
+
     def update_score(self, old_score, new_score) : self.queries.append(f'''UPDATE STATS SET Score = '{new_score}' WHERE Id = 1;''')
 
     def update_last_open_date(self, _today) : self.queries.append(f'''UPDATE STATS SET Last_Open = '{_today}' WHERE Id = 1;''')
@@ -28,7 +32,7 @@ class BackendWriter:
                                 SET DT_1 = '{default_message}', DT_2 = '{default_message}', DT_3 = '{default_message}',
                                 DT_1_completed = 0, DT_2_completed = 0, DT_3_completed = 0
                                 WHERE Id = 1;''')
-
+ 
     def toggle_dt(self, t_no, state) :  self.queries.append(f'''UPDATE STATS SET DT_{t_no}_completed = '{state}' WHERE Id = 1;''')
 
     def add_to_do(self, task, parent = '-1') : 
@@ -52,6 +56,9 @@ class BackendWriter:
 
     def update_to_do(self, t_no, new_name, new_track) :
         self.queries.append(f'''UPDATE TO_DO_LIST SET Task_Name = '{new_name}', Track = '{new_track}' WHERE Sr_No = {t_no};''')
+    
+    def update_vouchers(self, v_no, new_name, new_q) :
+        self.queries.append(f'''UPDATE VOUCHERS SET V_name = '{new_name}', Quantity = {new_q} WHERE Sr_No = {v_no};''')
 
     def add_recurring_task(self, task, pts, parent = '-1') :
         self.queries.append(f'''INSERT INTO RECURRING_TASKS(Task_Name, Last_Completion_Date, Task_Points, Parent) VALUES('{task}', '0', '{pts}', {parent});''')
@@ -72,6 +79,12 @@ class BackendWriter:
     def update_recurring_task(self, t_no, new_name, new_pts, new_track) :
         self.queries.append(f'''UPDATE RECURRING_TASKS SET Task_Name = '{new_name}', Task_Points = '{new_pts}', Track = '{new_track}' WHERE Sr_No = {t_no};''')
 
+    def addVouchers(self, voucherName, voucherPrice) :
+        self.queries.append(f'''INSERT INTO VOUCHERS(V_Name, Price) VALUES('{voucherName}', {voucherPrice});''')
+
+    def updateVouchers(self, vNo, voucherName, voucherPrice, voucherQ) :
+        self.queries.append(f'''UPDATE VOUCHERS SET V_Name = '{voucherName}', Price = {voucherPrice}, Quantity = {voucherQ} WHERE Sr_No = {vNo};''')
+
     def commit(self) :
         if len(self.add_log) == 0 : return       # if there's no change to push, return
 
@@ -83,10 +96,12 @@ class BackendWriter:
             cursor.executemany('''INSERT INTO USER_LOGS(Log) Values(%s)''', [(log,) for log in self.add_log])
             for query in self.queries : cursor.execute(query)
             self.queries = []
+            self.add_log = []
             self.connection.commit()
         except MySQLdb.Error as e :
             print(f"Error: {e}")
             self.queries = []
+            self.add_log = []
             self.connection.rollback()
             raise
 
@@ -129,7 +144,6 @@ class BackendWriter:
 
         variables['to_do_completed'] = {row[0] : row[1:] for row in self.get_table_data('TO_DO_COMPLETED')}
 
-        # variables['RT']
         RT_list = [row for row in self.get_table_data('RECURRING_TASKS') if row[2] != _today]
         child_of_RT = dict([])
         roots_RT = []
@@ -153,6 +167,7 @@ class BackendWriter:
                     if variables['RT'][child][1] == 1 : variables['RT'][parent][1] = 1
                     
         variables['RT_completed'] = {row[0] : row[1:] for row in self.get_table_data('RECURRING_TASKS') if row[2] == _today}
+        variables['VOUCHERS'] = {row[0] : row[1:] for row in self.get_table_data('VOUCHERS')}
 
         return variables
 
@@ -160,3 +175,4 @@ class BackendWriter:
         '''Closes database connection when object is destroyed'''
         print('Closing connection via __del__ ...')
         self.connection.close()
+

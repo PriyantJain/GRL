@@ -3,6 +3,10 @@ import time
 import random
 from ..model.mysql_writer import BackendWriter
 
+class TaskManager:
+    def __init__(self) :
+        pass
+
 class GRL_class:
     def __init__(self):
         #creating backend object
@@ -70,7 +74,7 @@ class GRL_class:
     def today_target(self) :
         return int(int(self.variables['Last_Day_Score']) * (0.95 if int(self.variables['Last_Day_Score']) < 0 else 1.05))
     
-        
+    
     def DtCreateSubmit(self, task_no, task):
         if task_no not in list('123') : return
         self.db.add_log = ['DT_Create;{};{}'.format(task_no, task)]
@@ -279,7 +283,6 @@ class GRL_class:
         self.db.commit()
         self.pull_status()
          
-    
     def get_RT_list(self) :    return self.variables['RT'], self.variables['RT_list']
     def get_RT_done(self) :    return [(key, *val) for key, val in self.variables['RT_completed'].items()]
         
@@ -341,3 +344,70 @@ class GRL_class:
         self.db.update_recurring_task(t_no, new_name, new_point, new_track)
         self.db.commit()
         self.pull_status()
+
+    def get_vouchers(self) :    return [(key, *val) for key, val in self.variables['VOUCHERS'].items()][1:]
+
+    def createVoucher(self, vName, vPrice) :
+        # No Functional changes
+
+        # DB updates
+        self.db.begin()                                                                     # initiate db
+        self.db.add_log.append('CREATE_VOUCHER;{};{};'.format(vName, vPrice))               # Logging
+        self.db.addVouchers(vName, vPrice)                                                  # DB changes
+        self.db.commit()                                                                    # DB commits      
+
+        # Updating player status
+        self.pull_status()
+
+    def buyVoucher(self, v_no, q=1) :
+        # Functional changes
+        old_q = self.variables['VOUCHERS'][v_no][1]
+        v_name = self.variables['VOUCHERS'][v_no][0]
+        prc = self.variables['VOUCHERS'][v_no][2]
+
+        old_score = self.score
+        new_score = self.score - q * int(prc)
+        new_q = old_q  + q
+        
+        # DB updates
+        self.db.begin()                                                                     # initiate db
+        self.db.add_log.append('BUY_VOUCHER;{};{};'.format(v_no, q))                        # Logging
+        self.db.add_log.append('UPDATE_SCORE;' + str(old_score) + ';' + str(new_score))
+        self.db.updateVouchers(v_no, v_name, prc, new_q)                                    # DB changes
+        self.db.update_score(old_score, new_score)
+        self.db.commit()                                                                    # DB commits
+
+        # Updating player status
+        self.pull_status()
+
+    def useVoucher(self, v_no, q=1) :
+        # Functional changes
+        old_q = self.variables['VOUCHERS'][v_no][1]
+        v_name = self.variables['VOUCHERS'][v_no][0]
+        prc = self.variables['VOUCHERS'][v_no][2]
+
+        new_q = old_q  - q
+        assert new_q >= 0, 'No voucher to use'
+        
+        # DB updates
+        self.db.begin()                                                                     # initiate db
+        self.db.add_log.append('USE_VOUCHER;{};{};'.format(v_no, q))                        # Logging
+        self.db.updateVouchers(v_no, v_name, prc, new_q)                                    # DB changes
+        self.db.commit()                                                                    # DB commits
+
+        # Updating player status
+        self.pull_status()
+
+    def editVoucherDetails(self, vNo, voucherName, voucherPrice):
+        # Functional changes
+        voucherQ = self.variables['VOUCHERS'][vNo][1]
+
+        # DB updates
+        self.db.begin()                                                                              # initiate db
+        self.db.add_log.append('UPDATE_VOUCHER;{};{};{};'.format(vNo, voucherName, voucherPrice))    # Logging
+        self.db.updateVouchers(vNo, voucherName, voucherPrice, voucherQ)                             # DB changes
+        self.db.commit()                                                                             # db commits
+
+        # Updating player status
+        self.pull_status()
+

@@ -206,6 +206,9 @@ class GRL_class:
         elif task == 'Words' : 
             self.db.add_log.append('{};{};'.format(task, value * 10))
             new_score = self.score + value * 10
+        elif task == 'Morning' : 
+            self.db.add_log.append('{};{};'.format(task, value * value))
+            new_score = self.score + value * value
 
         
         self.db.add_log.append('UPDATE SCORE;' + str(old_score) + ';' + str(new_score))

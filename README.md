@@ -7,21 +7,21 @@
 
 
 ### TODO 
-Change name of functions like TODO_update_name to TODO_update_details
-Change only RT_update like functions naeme to RT_udate_details, maybe done check once
+Change name of functions like TODO_update_name to TODO_update_details (I)
+Change only RT_update like functions naeme to RT_udate_details, maybe done check once (I)
 
-Remove refreshing page at each button press
+Remove refreshing page at each button press (I)
 
-Restructure flask on html side to add structure and ease of creating new pages
+Restructure flask on html side to add structure and ease of creating new pages (I)
 
-Restructure GRL class to break out todo as task manager class and shop as different class, if possible more pieces
+Restructure GRL class to break out todo as task manager class and shop as different class, if possible more pieces (III)
 
-If you jump directly to any page before home then update and one time actions may not be called
+If you jump directly to any page before home then update and one time actions may not be called (I)
 
-Rename main.js to home.js and shift to js folder
+Rename main.js to home.js and shift to js folder (I)
 
-Turn all naming convention to camelcasing in py/js/html files
+Turn all naming convention to camelcasing in py/js/html files (I)
 
-Add comments and structure functions in GRL class
+Add comments and structure functions in GRL class (III)
 
-Split to do, rt and others if possible using blueprint
+Split to do, rt and others if possible using blueprint (II)

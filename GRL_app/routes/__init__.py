@@ -59,8 +59,8 @@ def add_routes(app, player) :
         
     
     def loaded_shop_page() :
-        variables = {'Vouchers' : player.get_vouchers()
-                    }
+        variables = {'Vouchers' : player.get_vouchers(),
+                     'score' : player.score}
         return flask.render_template("Shop.html", **variables)
     
     @app.route('/shop', methods = ['GET'])

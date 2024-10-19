@@ -7,6 +7,9 @@ class TaskManager:
     def __init__(self) :
         pass
 
+class Shop:
+    def __init__(self) : pass
+
 class GRL_class:
     def __init__(self):
         #creating backend object
@@ -58,7 +61,6 @@ class GRL_class:
         self.db.commit()
         self.pull_status()
         
-    
     @property
     def score(self) :    return int(float(self.variables['Score']))
     
@@ -190,33 +192,39 @@ class GRL_class:
         self.pull_status()
         
     def StandardTasksSubmit(self, task, value) :
+        # Functional changes
         if task == 'Select' : return
         
-        self.db.add_log = []
         old_score = self.score
         _before = datetime.datetime.strftime(datetime.date.today() - datetime.timedelta(days = 1), "%Y%m%d")
-        value = int(value)
+        value = int(value)          # Should I cast to float?
         
-        if task == 'Walk' : 
-            self.db.add_log.append('WALK;{};{};'.format(_before, value//10))
-            new_score = self.score + value // 10  
+        if task == 'Walk' :
+            task = task + _before
+            delta = value // 10                                            # Step walked // 10 points, (value:steps)
+            new_score = self.score + delta
         elif task == 'Learning' or task == 'Brainpad': 
-            self.db.add_log.append('{};{};'.format(task, value * 100))
-            new_score = self.score + value * 100
+            delta = value * 100
+            new_score = self.score + delta                                 # Maybe redefine this 2 tasks
         elif task == 'Words' : 
-            self.db.add_log.append('{};{};'.format(task, value * 10))
-            new_score = self.score + value * 10
+            delta = value * 10
+            new_score = self.score + delta                                 # Maybe deco this
         elif task == 'Morning' : 
-            self.db.add_log.append('{};{};'.format(task, value * value))
-            new_score = self.score + value * value
+            delta = value * value                                          # square of minutes left to wake, (value:min left)
+            new_score = self.score + delta
+        elif task == 'ScreenTime' :
+            delta = int(max(7-value, 0)) * 500                             # 500 * (7 - no. of hours phone used), (value:hours used)
+            new_score = self.score + delta
 
-        
-        self.db.add_log.append('UPDATE SCORE;' + str(old_score) + ';' + str(new_score))
-        self.db.update_score(old_score, new_score)
+        # DB updates
+        self.db.begin()                                                                     # initiate db
+        self.db.add_log.append('{};{};'.format(task, delta))                                # Logging
+        self.db.add_log.append('UPDATE SCORE;' + str(old_score) + ';' + str(new_score))     
+        self.db.update_score(old_score, new_score)                                          # DB changes
+        self.db.commit()                                                                    # DB commits
 
-        self.db.commit()
+        # Updating player status
         self.pull_status()
-        
 
     def get_to_do_list(self) :    return self.variables['to_do'], self.variables['to_do_list']
     def get_to_do_done(self) :    return [(key, *val) for key, val in self.variables['to_do_completed'].items()][1:]

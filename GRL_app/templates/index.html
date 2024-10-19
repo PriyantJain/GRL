@@ -119,7 +119,8 @@
                             <option value = "Learning"> Learning chunk (100 pt/unit)</option>
                             <option value = "Brainpad"> Brainpad (100 pt/unit)</option>
                             <option value = "Words"> Words left (10 pt/unit)</option> 
-                            <option value = "Morning"> Morning time left (min**2)</option> 
+                            <option value = "Morning"> Morning time left (in minutes)</option> 
+                            <option value = "ScreenTime"> ScreenTime (round to lower int)</option> 
                         </select>
                         <input type="text" class="form-control rounded-pill ms-1" aria-label = "Standard_points_change" id = "StandardTasksValue">
                         <button class="btn btn-outline-secondary rounded-pill ms-1" type="button" id = "StandardTasksSubmit">Submit</button>
@@ -408,7 +409,7 @@
                 </div>
             </div>
         </div>
-
+        
         <!-- Error Modal -->
         <div class="modal fade" id="API_err_modal" tabindex="-1" aria-labelledby="API_err_modal" aria-hidden="true">
             <div class="modal-dialog">
